@@ -1,0 +1,3364 @@
+var init = function(){
+globalStore.countEnabled = 0;
+globalStore.trace = "";
+globalStore.n12 = 0;
+globalStore.n26 = 0;
+globalStore.n30 = 0;
+globalStore.n34 = 0;
+globalStore.n38 = 0;
+globalStore.n42 = 0;
+globalStore.n46 = 0;
+globalStore.n50 = 0;
+globalStore.n8 = 0;
+globalStore.n11 = 0;
+globalStore.n21 = 0;
+globalStore.n15 = 0;
+globalStore.n19 = 0;
+globalStore.n22 = 0;
+globalStore.n25 = 0;
+globalStore.n29 = 0;
+globalStore.n33 = 0;
+globalStore.n37 = 0;
+globalStore.n41 = 0;
+globalStore.n45 = 0;
+globalStore.n49 = 0;
+globalStore.n17 = 0;
+globalStore.n14 = 0;
+globalStore.n13 = 0;
+globalStore.n23 = 0;
+globalStore.n3 = 0;
+globalStore.n20 = 0;
+globalStore.n24 = 0;
+globalStore.n28 = 0;
+globalStore.n32 = 0;
+globalStore.n36 = 0;
+globalStore.n40 = 0;
+globalStore.n44 = 0;
+globalStore.n48 = 0;
+globalStore.n2 = 1;
+globalStore.n6 = 0;
+globalStore.n7 = 0;
+globalStore.n9 = 0;
+globalStore.n10 = 0;
+globalStore.n18 = 0;
+globalStore.n27 = 0;
+globalStore.n31 = 0;
+globalStore.n35 = 0;
+globalStore.n39 = 0;
+globalStore.n43 = 0;
+globalStore.n47 = 0;
+globalStore.n51 = 0;
+globalStore.n16 = 0;
+globalStore.n1 = 0;
+globalStore.n5 = 0;
+globalStore.n4 = 0;
+
+globalStore.enabled_n54 = false; // LNS(n54)
+globalStore.enabled_n58 = false; // MRIH
+globalStore.enabled_n66 = false; // None
+globalStore.enabled_n70 = false; // None
+globalStore.enabled_n62 = false; // REE(n62)
+globalStore.enabled_n74 = false; // HEX
+globalStore.enabled_n78 = false; // None
+globalStore.enabled_n82 = false; // None
+globalStore.enabled_n86 = false; // BMI
+globalStore.enabled_n90 = false; // None
+globalStore.enabled_n101 = false; // None
+globalStore.enabled_n110 = false; // AITDS
+globalStore.enabled_n123 = false; // None
+globalStore.enabled_n92 = false; // None
+globalStore.enabled_n114 = false; // None
+globalStore.enabled_n105 = false; // None
+globalStore.enabled_n127 = false; // None
+globalStore.enabled_n96 = false; // PCN(n96)
+globalStore.enabled_n118 = false; // None
+globalStore.enabled_n53 = false; // LDH
+globalStore.enabled_n57 = false; // None
+globalStore.enabled_n61 = false; // SLNB
+globalStore.enabled_n69 = false; // EXC
+globalStore.enabled_n65 = false; // None
+globalStore.enabled_n73 = false; // None
+globalStore.enabled_n77 = false; // None
+globalStore.enabled_n81 = false; // LAELN
+globalStore.enabled_n85 = false; // RATH(n85)
+globalStore.enabled_n89 = false; // LNS(n89)
+globalStore.enabled_n100 = false; // None
+globalStore.enabled_n109 = false; // None
+globalStore.enabled_n122 = false; // None
+globalStore.enabled_n113 = false; // None
+globalStore.enabled_n104 = false; // HEXREE
+globalStore.enabled_n126 = false; // None
+globalStore.enabled_n95 = false; // APDA(n95)
+globalStore.enabled_n117 = false; // LNS(n117)
+globalStore.enabled_n108 = false; // SCE
+globalStore.enabled_n52 = false; // PCTA
+globalStore.enabled_n56 = false; // None
+globalStore.enabled_n60 = false; // FCE
+globalStore.enabled_n68 = false; // REE(n68)
+globalStore.enabled_n64 = false; // None
+globalStore.enabled_n72 = false; // REE(n72)
+globalStore.enabled_n76 = false; // REE(n76)
+globalStore.enabled_n80 = false; // PCN(n80)
+globalStore.enabled_n84 = false; // None
+globalStore.enabled_n88 = false; // None
+globalStore.enabled_n99 = false; // None
+globalStore.enabled_n112 = false; // None
+globalStore.enabled_n121 = false; // None
+globalStore.enabled_n103 = false; // None
+globalStore.enabled_n125 = false; // None
+globalStore.enabled_n94 = false; // RATH(n94)
+globalStore.enabled_n116 = false; // None
+globalStore.enabled_n120 = false; // DCM(n120)
+globalStore.enabled_n107 = false; // None
+globalStore.enabled_n55 = false; // None
+globalStore.enabled_n59 = false; // S100B(n59)
+globalStore.enabled_n67 = false; // None
+globalStore.enabled_n63 = false; // None
+globalStore.enabled_n71 = false; // None
+globalStore.enabled_n75 = false; // HEXSLNB
+globalStore.enabled_n79 = false; // None
+globalStore.enabled_n83 = false; // None
+globalStore.enabled_n87 = false; // APDA(n87)
+globalStore.enabled_n91 = false; // None
+globalStore.enabled_n98 = false; // DCM(n98)
+globalStore.enabled_n111 = false; // None
+globalStore.enabled_n119 = false; // S100B(n119)
+globalStore.enabled_n102 = false; // None
+globalStore.enabled_n124 = false; // None
+globalStore.enabled_n93 = false; // None
+globalStore.enabled_n115 = false; // None
+globalStore.enabled_n106 = false; // None
+globalStore.enabled_n97 = false; // None
+
+globalStore.fired_n54 = 0;
+globalStore.fired_n58 = 0;
+globalStore.fired_n66 = 0;
+globalStore.fired_n70 = 0;
+globalStore.fired_n62 = 0;
+globalStore.fired_n74 = 0;
+globalStore.fired_n78 = 0;
+globalStore.fired_n82 = 0;
+globalStore.fired_n86 = 0;
+globalStore.fired_n90 = 0;
+globalStore.fired_n101 = 0;
+globalStore.fired_n110 = 0;
+globalStore.fired_n123 = 0;
+globalStore.fired_n92 = 0;
+globalStore.fired_n114 = 0;
+globalStore.fired_n105 = 0;
+globalStore.fired_n127 = 0;
+globalStore.fired_n96 = 0;
+globalStore.fired_n118 = 0;
+globalStore.fired_n53 = 0;
+globalStore.fired_n57 = 0;
+globalStore.fired_n61 = 0;
+globalStore.fired_n69 = 0;
+globalStore.fired_n65 = 0;
+globalStore.fired_n73 = 0;
+globalStore.fired_n77 = 0;
+globalStore.fired_n81 = 0;
+globalStore.fired_n85 = 0;
+globalStore.fired_n89 = 0;
+globalStore.fired_n100 = 0;
+globalStore.fired_n109 = 0;
+globalStore.fired_n122 = 0;
+globalStore.fired_n113 = 0;
+globalStore.fired_n104 = 0;
+globalStore.fired_n126 = 0;
+globalStore.fired_n95 = 0;
+globalStore.fired_n117 = 0;
+globalStore.fired_n108 = 0;
+globalStore.fired_n52 = 0;
+globalStore.fired_n56 = 0;
+globalStore.fired_n60 = 0;
+globalStore.fired_n68 = 0;
+globalStore.fired_n64 = 0;
+globalStore.fired_n72 = 0;
+globalStore.fired_n76 = 0;
+globalStore.fired_n80 = 0;
+globalStore.fired_n84 = 0;
+globalStore.fired_n88 = 0;
+globalStore.fired_n99 = 0;
+globalStore.fired_n112 = 0;
+globalStore.fired_n121 = 0;
+globalStore.fired_n103 = 0;
+globalStore.fired_n125 = 0;
+globalStore.fired_n94 = 0;
+globalStore.fired_n116 = 0;
+globalStore.fired_n120 = 0;
+globalStore.fired_n107 = 0;
+globalStore.fired_n55 = 0;
+globalStore.fired_n59 = 0;
+globalStore.fired_n67 = 0;
+globalStore.fired_n63 = 0;
+globalStore.fired_n71 = 0;
+globalStore.fired_n75 = 0;
+globalStore.fired_n79 = 0;
+globalStore.fired_n83 = 0;
+globalStore.fired_n87 = 0;
+globalStore.fired_n91 = 0;
+globalStore.fired_n98 = 0;
+globalStore.fired_n111 = 0;
+globalStore.fired_n119 = 0;
+globalStore.fired_n102 = 0;
+globalStore.fired_n124 = 0;
+globalStore.fired_n93 = 0;
+globalStore.fired_n115 = 0;
+globalStore.fired_n106 = 0;
+globalStore.fired_n97 = 0;
+
+globalStore.vars = { MMDI : {'maxValue': 100.0, 'minValue': 0.0, 'type': 'java.lang.Double'}, ALN : {'maxValue': 100.0, 'minValue': 0.0, 'type': 'java.lang.Long'}, SULN : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, SCSN : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 1, 'valueMapping': {0: 'true'}}, REPE : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, RTTH : {'maxValue': 100.0, 'minValue': 0.0, 'type': 'java.lang.Double'}, TUTH : {'maxValue': 100.0, 'minValue': 0.0, 'type': 'java.lang.Double'}, CAER : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 1, 'valueMapping': {0: 'true'}}, SUME : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, PLNM : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, ULCE : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 1, 'valueMapping': {0: 'with ulceration'}}, MECO : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, STAG : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 11, 'valueMapping': {0: 'IB', 1: '0', 2: 'IIA', 3: 'IIC', 4: 'IIID', 5: 'IIB', 6: 'IA', 7: 'IV', 8: 'IIIC', 9: 'IIIA', 10: 'IIIB'}}, BVEM : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, ISMD : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, S100BP : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, BVKM : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, MELA : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, S100B : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'normal', 1: 'increased'}}, LYNM : {'maxValue': 100.0, 'minValue': 0.0, 'type': 'java.lang.Double'}, MIRA : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 1, 'valueMapping': {0: 'increased'}}, SMET : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, PAAG : {'maxValue': 100.0, 'minValue': 0.0, 'type': 'java.lang.Long'}, REST : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'R1', 1: 'R0'}}, LNMD : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}}, LNSP : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 2, 'valueMapping': {0: 'true', 1: 'false'}} };
+
+globalStore.MMDI = 0;
+globalStore.RTTH = 0;
+globalStore.TUTH = 0;
+globalStore.LYNM = 0;
+}
+
+var update_enabled_n54 = function() {
+if(globalStore.n1 > 0 && globalStore.LNSP==1 && globalStore.n10 > 0 && globalStore.LNSP==1) {
+if (!globalStore.enabled_n54) {
+globalStore.enabled_n54 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n54) {
+globalStore.enabled_n54 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n58 = function() {
+if(globalStore.n13 > 0 && globalStore.n1 > 0) {
+if (!globalStore.enabled_n58) {
+globalStore.enabled_n58 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n58) {
+globalStore.enabled_n58 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n66 = function() {
+if(globalStore.n7 > 0 && globalStore.LNMD==1&&globalStore.ISMD==0) {
+if (!globalStore.enabled_n66) {
+globalStore.enabled_n66 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n66) {
+globalStore.enabled_n66 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n70 = function() {
+if(globalStore.n12 > 0 && globalStore.SUME==1) {
+if (!globalStore.enabled_n70) {
+globalStore.enabled_n70 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n70) {
+globalStore.enabled_n70 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n62 = function() {
+if(globalStore.n4 > 0) {
+if (!globalStore.enabled_n62) {
+globalStore.enabled_n62 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n62) {
+globalStore.enabled_n62 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n74 = function() {
+if(globalStore.n22 > 0) {
+if (!globalStore.enabled_n74) {
+globalStore.enabled_n74 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n74) {
+globalStore.enabled_n74 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n78 = function() {
+if(globalStore.n24 > 0 && globalStore.STAG==1&&globalStore.STAG==6&&globalStore.REST==1) {
+if (!globalStore.enabled_n78) {
+globalStore.enabled_n78 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n78) {
+globalStore.enabled_n78 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n82 = function() {
+if(globalStore.n26 > 0 && globalStore.SCSN==0&&globalStore.MMDI<=1&&globalStore.STAG==3) {
+if (!globalStore.enabled_n82) {
+globalStore.enabled_n82 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n82) {
+globalStore.enabled_n82 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n86 = function() {
+if(globalStore.n28 > 0 && globalStore.STAG==9&&globalStore.STAG==10&&globalStore.STAG==8&&globalStore.STAG==4&&globalStore.BVEM==0&&globalStore.BVKM==0) {
+if (!globalStore.enabled_n86) {
+globalStore.enabled_n86 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n86) {
+globalStore.enabled_n86 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n90 = function() {
+if(globalStore.n30 > 0 && globalStore.SMET==1&&globalStore.STAG==3) {
+if (!globalStore.enabled_n90) {
+globalStore.enabled_n90 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n90) {
+globalStore.enabled_n90 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n101 = function() {
+if(globalStore.n35 > 0 && globalStore.PLNM==0) {
+if (!globalStore.enabled_n101) {
+globalStore.enabled_n101 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n101) {
+globalStore.enabled_n101 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n110 = function() {
+if(globalStore.n40 > 0) {
+if (!globalStore.enabled_n110) {
+globalStore.enabled_n110 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n110) {
+globalStore.enabled_n110 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n123 = function() {
+if(globalStore.n48 > 0 && globalStore.STAG==2&&globalStore.STAG==5) {
+if (!globalStore.enabled_n123) {
+globalStore.enabled_n123 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n123) {
+globalStore.enabled_n123 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n92 = function() {
+if(globalStore.n30 > 0 && globalStore.SMET==0) {
+if (!globalStore.enabled_n92) {
+globalStore.enabled_n92 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n92) {
+globalStore.enabled_n92 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n114 = function() {
+if(globalStore.n42 > 0 && globalStore.REST==1) {
+if (!globalStore.enabled_n114) {
+globalStore.enabled_n114 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n114) {
+globalStore.enabled_n114 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n105 = function() {
+if(globalStore.n38 > 0 && globalStore.STAG==7) {
+if (!globalStore.enabled_n105) {
+globalStore.enabled_n105 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n105) {
+globalStore.enabled_n105 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n127 = function() {
+if(globalStore.n50 > 0 && globalStore.SMET==0) {
+if (!globalStore.enabled_n127) {
+globalStore.enabled_n127 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n127) {
+globalStore.enabled_n127 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n96 = function() {
+if(globalStore.n33 > 0 && globalStore.S100B==1) {
+if (!globalStore.enabled_n96) {
+globalStore.enabled_n96 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n96) {
+globalStore.enabled_n96 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n118 = function() {
+if(globalStore.n44 > 0) {
+if (!globalStore.enabled_n118) {
+globalStore.enabled_n118 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n118) {
+globalStore.enabled_n118 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n53 = function() {
+if(globalStore.n14 > 0 && globalStore.n1 > 0) {
+if (!globalStore.enabled_n53) {
+globalStore.enabled_n53 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n53) {
+globalStore.enabled_n53 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n57 = function() {
+if(globalStore.n1 > 0 && globalStore.n20 > 0 && globalStore.n17 > 0 && globalStore.n18 > 0 && globalStore.n19 > 0 && globalStore.n16 > 0) {
+if (!globalStore.enabled_n57) {
+globalStore.enabled_n57 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n57) {
+globalStore.enabled_n57 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n61 = function() {
+if(globalStore.n3 > 0) {
+if (!globalStore.enabled_n61) {
+globalStore.enabled_n61 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n61) {
+globalStore.enabled_n61 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n69 = function() {
+if(globalStore.n12 > 0 && globalStore.SUME==0) {
+if (!globalStore.enabled_n69) {
+globalStore.enabled_n69 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n69) {
+globalStore.enabled_n69 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n65 = function() {
+if(globalStore.n7 > 0 && globalStore.LNMD==0&&globalStore.ISMD==0&&globalStore.LNMD==0&&globalStore.ISMD==1) {
+if (!globalStore.enabled_n65) {
+globalStore.enabled_n65 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n65) {
+globalStore.enabled_n65 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n73 = function() {
+if(globalStore.n21 > 0 && globalStore.REPE==0) {
+if (!globalStore.enabled_n73) {
+globalStore.enabled_n73 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n73) {
+globalStore.enabled_n73 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n77 = function() {
+if(globalStore.n24 > 0 && globalStore.STAG==3&&globalStore.STAG==9&&globalStore.STAG==10&&globalStore.STAG==8&&globalStore.STAG==4) {
+if (!globalStore.enabled_n77) {
+globalStore.enabled_n77 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n77) {
+globalStore.enabled_n77 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n81 = function() {
+if(globalStore.n26 > 0 && globalStore.MMDI>0.1) {
+if (!globalStore.enabled_n81) {
+globalStore.enabled_n81 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n81) {
+globalStore.enabled_n81 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n85 = function() {
+if(globalStore.n27 > 0 && globalStore.ALN>=3&&globalStore.CAER==0&&globalStore.LYNM>3) {
+if (!globalStore.enabled_n85) {
+globalStore.enabled_n85 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n85) {
+globalStore.enabled_n85 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n89 = function() {
+if(globalStore.n29 > 0) {
+if (!globalStore.enabled_n89) {
+globalStore.enabled_n89 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n89) {
+globalStore.enabled_n89 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n100 = function() {
+if(globalStore.n35 > 0 && globalStore.STAG==7) {
+if (!globalStore.enabled_n100) {
+globalStore.enabled_n100 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n100) {
+globalStore.enabled_n100 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n109 = function() {
+if(globalStore.n39 > 0 && globalStore.MELA==1) {
+if (!globalStore.enabled_n109) {
+globalStore.enabled_n109 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n109) {
+globalStore.enabled_n109 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n122 = function() {
+if(globalStore.n48 > 0 && globalStore.STAG==0&&globalStore.STAG==2) {
+if (!globalStore.enabled_n122) {
+globalStore.enabled_n122 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n122) {
+globalStore.enabled_n122 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n113 = function() {
+if(globalStore.n42 > 0 && globalStore.RTTH>1) {
+if (!globalStore.enabled_n113) {
+globalStore.enabled_n113 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n113) {
+globalStore.enabled_n113 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n104 = function() {
+if(globalStore.n37 > 0) {
+if (!globalStore.enabled_n104) {
+globalStore.enabled_n104 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n104) {
+globalStore.enabled_n104 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n126 = function() {
+if(globalStore.n50 > 0 && globalStore.SMET==1) {
+if (!globalStore.enabled_n126) {
+globalStore.enabled_n126 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n126) {
+globalStore.enabled_n126 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n95 = function() {
+if(globalStore.n32 > 0 && globalStore.STAG==9&&globalStore.STAG==10&&globalStore.STAG==8&&globalStore.STAG==4&&globalStore.BVEM==1&&globalStore.BVKM==1) {
+if (!globalStore.enabled_n95) {
+globalStore.enabled_n95 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n95) {
+globalStore.enabled_n95 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n117 = function() {
+if(globalStore.n43 > 0 && globalStore.LNSP==1) {
+if (!globalStore.enabled_n117) {
+globalStore.enabled_n117 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n117) {
+globalStore.enabled_n117 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n108 = function() {
+if(globalStore.n39 > 0 && globalStore.MELA==0) {
+if (!globalStore.enabled_n108) {
+globalStore.enabled_n108 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n108) {
+globalStore.enabled_n108 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n52 = function() {
+if(globalStore.n11 > 0 && globalStore.n1 > 0) {
+if (!globalStore.enabled_n52) {
+globalStore.enabled_n52 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n52) {
+globalStore.enabled_n52 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n56 = function() {
+if(globalStore.n1 > 0 && globalStore.S100BP==0 && globalStore.n15 > 0 && globalStore.S100BP==0) {
+if (!globalStore.enabled_n56) {
+globalStore.enabled_n56 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n56) {
+globalStore.enabled_n56 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n60 = function() {
+if(globalStore.n2 > 0) {
+if (!globalStore.enabled_n60) {
+globalStore.enabled_n60 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n60) {
+globalStore.enabled_n60 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n68 = function() {
+if(globalStore.n9 > 0) {
+if (!globalStore.enabled_n68) {
+globalStore.enabled_n68 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n68) {
+globalStore.enabled_n68 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n64 = function() {
+if(globalStore.n7 > 0 && globalStore.STAG==7) {
+if (!globalStore.enabled_n64) {
+globalStore.enabled_n64 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n64) {
+globalStore.enabled_n64 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n72 = function() {
+if(globalStore.n21 > 0 && globalStore.REPE==1) {
+if (!globalStore.enabled_n72) {
+globalStore.enabled_n72 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n72) {
+globalStore.enabled_n72 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n76 = function() {
+if(globalStore.n24 > 0 && globalStore.REST==0) {
+if (!globalStore.enabled_n76) {
+globalStore.enabled_n76 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n76) {
+globalStore.enabled_n76 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n80 = function() {
+if(globalStore.n25 > 0) {
+if (!globalStore.enabled_n80) {
+globalStore.enabled_n80 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n80) {
+globalStore.enabled_n80 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n84 = function() {
+if(globalStore.n27 > 0) {
+if (!globalStore.enabled_n84) {
+globalStore.enabled_n84 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n84) {
+globalStore.enabled_n84 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n88 = function() {
+if(globalStore.n29 > 0) {
+if (!globalStore.enabled_n88) {
+globalStore.enabled_n88 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n88) {
+globalStore.enabled_n88 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n99 = function() {
+if(globalStore.n35 > 0 && globalStore.STAG!=7&&globalStore.PLNM==1) {
+if (!globalStore.enabled_n99) {
+globalStore.enabled_n99 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n99) {
+globalStore.enabled_n99 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n112 = function() {
+if(globalStore.n42 > 0 && globalStore.REST==0) {
+if (!globalStore.enabled_n112) {
+globalStore.enabled_n112 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n112) {
+globalStore.enabled_n112 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n121 = function() {
+if(globalStore.n47 > 0) {
+if (!globalStore.enabled_n121) {
+globalStore.enabled_n121 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n121) {
+globalStore.enabled_n121 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n103 = function() {
+if(globalStore.n36 > 0 && globalStore.SULN==0) {
+if (!globalStore.enabled_n103) {
+globalStore.enabled_n103 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n103) {
+globalStore.enabled_n103 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n125 = function() {
+if(globalStore.n49 > 0 && globalStore.MECO==0&&globalStore.STAG==3&&globalStore.STAG==9&&globalStore.STAG==10&&globalStore.STAG==8&&globalStore.STAG==4) {
+if (!globalStore.enabled_n125) {
+globalStore.enabled_n125 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n125) {
+globalStore.enabled_n125 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n94 = function() {
+if(globalStore.n31 > 0 && globalStore.ALN>=3&&globalStore.CAER==0&&globalStore.LYNM>3) {
+if (!globalStore.enabled_n94) {
+globalStore.enabled_n94 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n94) {
+globalStore.enabled_n94 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n116 = function() {
+if(globalStore.n43 > 0 && globalStore.LNSP==0) {
+if (!globalStore.enabled_n116) {
+globalStore.enabled_n116 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n116) {
+globalStore.enabled_n116 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n120 = function() {
+if(globalStore.n46 > 0) {
+if (!globalStore.enabled_n120) {
+globalStore.enabled_n120 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n120) {
+globalStore.enabled_n120 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n107 = function() {
+if(globalStore.n38 > 0 && globalStore.STAG==3) {
+if (!globalStore.enabled_n107) {
+globalStore.enabled_n107 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n107) {
+globalStore.enabled_n107 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n55 = function() {
+if(globalStore.n10 > 0 && globalStore.LNSP==0 && globalStore.n1 > 0 && globalStore.LNSP==0) {
+if (!globalStore.enabled_n55) {
+globalStore.enabled_n55 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n55) {
+globalStore.enabled_n55 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n59 = function() {
+if(globalStore.n1 > 0 && globalStore.S100BP==1 && globalStore.n15 > 0 && globalStore.S100BP==1) {
+if (!globalStore.enabled_n59) {
+globalStore.enabled_n59 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n59) {
+globalStore.enabled_n59 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n67 = function() {
+if(globalStore.n8 > 0) {
+if (!globalStore.enabled_n67) {
+globalStore.enabled_n67 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n67) {
+globalStore.enabled_n67 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n63 = function() {
+if(globalStore.n6 > 0 && globalStore.n5 > 0) {
+if (!globalStore.enabled_n63) {
+globalStore.enabled_n63 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n63) {
+globalStore.enabled_n63 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n71 = function() {
+if(globalStore.n21 > 0 && globalStore.STAG==7) {
+if (!globalStore.enabled_n71) {
+globalStore.enabled_n71 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n71) {
+globalStore.enabled_n71 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n75 = function() {
+if(globalStore.n23 > 0) {
+if (!globalStore.enabled_n75) {
+globalStore.enabled_n75 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n75) {
+globalStore.enabled_n75 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n79 = function() {
+if(globalStore.n24 > 0 && globalStore.STAG==0&&globalStore.STAG==2&&globalStore.STAG==5) {
+if (!globalStore.enabled_n79) {
+globalStore.enabled_n79 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n79) {
+globalStore.enabled_n79 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n83 = function() {
+if(globalStore.n26 > 0 && globalStore.SCSN==0&&globalStore.MMDI<=1&&globalStore.STAG==9&&globalStore.STAG==10&&globalStore.STAG==8&&globalStore.STAG==4) {
+if (!globalStore.enabled_n83) {
+globalStore.enabled_n83 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n83) {
+globalStore.enabled_n83 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n87 = function() {
+if(globalStore.n28 > 0 && globalStore.STAG==9&&globalStore.STAG==10&&globalStore.STAG==8&&globalStore.STAG==4&&globalStore.BVEM==0&&globalStore.BVEM==1&&globalStore.BVKM==0&&globalStore.BVKM==1) {
+if (!globalStore.enabled_n87) {
+globalStore.enabled_n87 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n87) {
+globalStore.enabled_n87 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n91 = function() {
+if(globalStore.n30 > 0 && globalStore.SMET==1&&globalStore.TUTH<1) {
+if (!globalStore.enabled_n91) {
+globalStore.enabled_n91 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n91) {
+globalStore.enabled_n91 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n98 = function() {
+if(globalStore.n34 > 0) {
+if (!globalStore.enabled_n98) {
+globalStore.enabled_n98 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n98) {
+globalStore.enabled_n98 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n111 = function() {
+if(globalStore.n41 > 0 && globalStore.n45 > 0) {
+if (!globalStore.enabled_n111) {
+globalStore.enabled_n111 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n111) {
+globalStore.enabled_n111 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n119 = function() {
+if(globalStore.n44 > 0) {
+if (!globalStore.enabled_n119) {
+globalStore.enabled_n119 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n119) {
+globalStore.enabled_n119 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n102 = function() {
+if(globalStore.n36 > 0 && globalStore.SULN==1) {
+if (!globalStore.enabled_n102) {
+globalStore.enabled_n102 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n102) {
+globalStore.enabled_n102 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n124 = function() {
+if(globalStore.n49 > 0 && globalStore.MECO==1) {
+if (!globalStore.enabled_n124) {
+globalStore.enabled_n124 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n124) {
+globalStore.enabled_n124 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n93 = function() {
+if(globalStore.n30 > 0 && globalStore.SMET==1&&globalStore.TUTH>=1&&globalStore.PAAG<40&&globalStore.MIRA==0&&globalStore.TUTH>0.75&&globalStore.TUTH<1) {
+if (!globalStore.enabled_n93) {
+globalStore.enabled_n93 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n93) {
+globalStore.enabled_n93 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n115 = function() {
+if(globalStore.n42 > 0 && globalStore.ULCE==0&&globalStore.RTTH>4) {
+if (!globalStore.enabled_n115) {
+globalStore.enabled_n115 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n115) {
+globalStore.enabled_n115 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n106 = function() {
+if(globalStore.n38 > 0 && globalStore.STAG==7) {
+if (!globalStore.enabled_n106) {
+globalStore.enabled_n106 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n106) {
+globalStore.enabled_n106 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n97 = function() {
+if(globalStore.n33 > 0 && globalStore.S100B==0) {
+if (!globalStore.enabled_n97) {
+globalStore.enabled_n97 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n97) {
+globalStore.enabled_n97 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+
+var fire_n54 = function() {
+globalStore.n1 = globalStore.n1 - 1;
+
+globalStore.n10 = globalStore.n10 - 1;
+globalStore.n19 = globalStore.n19 + 1;
+
+globalStore.n1 = globalStore.n1 + 1;
+
+globalStore.fired_n54 = globalStore.fired_n54 + 1;
+
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+var old_var_LNSP = globalStore.LNSP;
+globalStore.LNSP = randomInteger({n: globalStore.vars['LNSP']['maxValue']});
+condition();
+
+update_enabled_n59();
+update_enabled_n55();
+update_enabled_n54();
+update_enabled_n57();
+update_enabled_n53();
+update_enabled_n56();
+update_enabled_n58();
+update_enabled_n52();
+}
+
+
+var fire_n58 = function() {
+globalStore.n13 = globalStore.n13 - 1;
+
+globalStore.n1 = globalStore.n1 - 1;
+globalStore.n16 = globalStore.n16 + 1;
+
+globalStore.n1 = globalStore.n1 + 1;
+
+globalStore.fired_n58 = globalStore.fired_n58 + 1;
+
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+
+update_enabled_n59();
+update_enabled_n55();
+update_enabled_n54();
+update_enabled_n57();
+update_enabled_n53();
+update_enabled_n56();
+update_enabled_n58();
+update_enabled_n52();
+}
+
+
+var fire_n66 = function() {
+globalStore.n7 = globalStore.n7 - 1;
+globalStore.n47 = globalStore.n47 + 1;
+
+globalStore.fired_n66 = globalStore.fired_n66 + 1;
+
+
+
+update_enabled_n66();
+update_enabled_n65();
+update_enabled_n64();
+update_enabled_n121();
+}
+
+
+var fire_n70 = function() {
+globalStore.n12 = globalStore.n12 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n70 = globalStore.fired_n70 + 1;
+
+
+
+update_enabled_n70();
+update_enabled_n69();
+}
+
+
+var fire_n62 = function() {
+globalStore.n4 = globalStore.n4 - 1;
+globalStore.n6 = globalStore.n6 + 1;
+
+globalStore.fired_n62 = globalStore.fired_n62 + 1;
+
+
+
+update_enabled_n63();
+update_enabled_n62();
+}
+
+
+var fire_n74 = function() {
+globalStore.n22 = globalStore.n22 - 1;
+globalStore.n39 = globalStore.n39 + 1;
+
+globalStore.fired_n74 = globalStore.fired_n74 + 1;
+
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+var old_var_TUTH = globalStore.TUTH;
+globalStore.TUTH = uniform({a: globalStore.vars['TUTH']['minValue'], b: globalStore.vars['TUTH']['maxValue']});
+var old_var_PAAG = globalStore.PAAG;
+globalStore.PAAG = randomInteger({n: globalStore.vars['PAAG']['maxValue']});
+var old_var_BVEM = globalStore.BVEM;
+globalStore.BVEM = randomInteger({n: globalStore.vars['BVEM']['maxValue']});
+var old_var_MELA = globalStore.MELA;
+globalStore.MELA = randomInteger({n: globalStore.vars['MELA']['maxValue']});
+var old_var_BVKM = globalStore.BVKM;
+globalStore.BVKM = randomInteger({n: globalStore.vars['BVKM']['maxValue']});
+var old_var_ULCE = globalStore.ULCE;
+globalStore.ULCE = randomInteger({n: globalStore.vars['ULCE']['maxValue']});
+var old_var_MIRA = globalStore.MIRA;
+globalStore.MIRA = randomInteger({n: globalStore.vars['MIRA']['maxValue']});
+
+update_enabled_n74();
+update_enabled_n108();
+update_enabled_n109();
+}
+
+
+var fire_n78 = function() {
+globalStore.n24 = globalStore.n24 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n78 = globalStore.fired_n78 + 1;
+
+
+
+update_enabled_n77();
+update_enabled_n78();
+update_enabled_n79();
+update_enabled_n76();
+}
+
+
+var fire_n82 = function() {
+globalStore.n26 = globalStore.n26 - 1;
+globalStore.n40 = globalStore.n40 + 1;
+
+globalStore.fired_n82 = globalStore.fired_n82 + 1;
+
+
+
+update_enabled_n83();
+update_enabled_n81();
+update_enabled_n82();
+update_enabled_n110();
+}
+
+
+var fire_n86 = function() {
+globalStore.n28 = globalStore.n28 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n86 = globalStore.fired_n86 + 1;
+
+
+
+update_enabled_n86();
+update_enabled_n87();
+}
+
+
+var fire_n90 = function() {
+globalStore.n30 = globalStore.n30 - 1;
+globalStore.n25 = globalStore.n25 + 1;
+
+globalStore.fired_n90 = globalStore.fired_n90 + 1;
+
+
+
+update_enabled_n80();
+update_enabled_n90();
+update_enabled_n92();
+update_enabled_n91();
+update_enabled_n93();
+}
+
+
+var fire_n101 = function() {
+globalStore.n35 = globalStore.n35 - 1;
+globalStore.n46 = globalStore.n46 + 1;
+
+globalStore.fired_n101 = globalStore.fired_n101 + 1;
+
+
+
+update_enabled_n99();
+update_enabled_n100();
+update_enabled_n120();
+update_enabled_n101();
+}
+
+
+var fire_n110 = function() {
+globalStore.n40 = globalStore.n40 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n110 = globalStore.fired_n110 + 1;
+
+
+
+update_enabled_n110();
+}
+
+
+var fire_n123 = function() {
+globalStore.n48 = globalStore.n48 - 1;
+globalStore.n40 = globalStore.n40 + 1;
+
+globalStore.fired_n123 = globalStore.fired_n123 + 1;
+
+
+
+update_enabled_n122();
+update_enabled_n123();
+update_enabled_n110();
+}
+
+
+var fire_n92 = function() {
+globalStore.n30 = globalStore.n30 - 1;
+globalStore.n34 = globalStore.n34 + 1;
+
+globalStore.fired_n92 = globalStore.fired_n92 + 1;
+
+
+
+update_enabled_n90();
+update_enabled_n98();
+update_enabled_n92();
+update_enabled_n91();
+update_enabled_n93();
+}
+
+
+var fire_n114 = function() {
+globalStore.n42 = globalStore.n42 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n114 = globalStore.fired_n114 + 1;
+
+
+
+update_enabled_n114();
+update_enabled_n112();
+update_enabled_n115();
+update_enabled_n113();
+}
+
+
+var fire_n105 = function() {
+globalStore.n38 = globalStore.n38 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n105 = globalStore.fired_n105 + 1;
+
+
+
+update_enabled_n106();
+update_enabled_n105();
+update_enabled_n107();
+}
+
+
+var fire_n127 = function() {
+globalStore.n50 = globalStore.n50 - 1;
+globalStore.n46 = globalStore.n46 + 1;
+
+globalStore.fired_n127 = globalStore.fired_n127 + 1;
+
+
+
+update_enabled_n127();
+update_enabled_n126();
+update_enabled_n120();
+}
+
+
+var fire_n96 = function() {
+globalStore.n33 = globalStore.n33 - 1;
+globalStore.n35 = globalStore.n35 + 1;
+
+globalStore.fired_n96 = globalStore.fired_n96 + 1;
+
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+var old_var_PLNM = globalStore.PLNM;
+globalStore.PLNM = randomInteger({n: globalStore.vars['PLNM']['maxValue']});
+condition();
+
+update_enabled_n100();
+update_enabled_n97();
+update_enabled_n96();
+update_enabled_n99();
+update_enabled_n101();
+}
+
+
+var fire_n118 = function() {
+globalStore.n44 = globalStore.n44 - 1;
+globalStore.n50 = globalStore.n50 + 1;
+
+globalStore.fired_n118 = globalStore.fired_n118 + 1;
+
+
+
+update_enabled_n119();
+update_enabled_n127();
+update_enabled_n126();
+update_enabled_n118();
+}
+
+
+var fire_n53 = function() {
+globalStore.n14 = globalStore.n14 - 1;
+
+globalStore.n1 = globalStore.n1 - 1;
+globalStore.n1 = globalStore.n1 + 1;
+
+globalStore.n17 = globalStore.n17 + 1;
+
+globalStore.fired_n53 = globalStore.fired_n53 + 1;
+
+
+
+update_enabled_n59();
+update_enabled_n55();
+update_enabled_n54();
+update_enabled_n57();
+update_enabled_n53();
+update_enabled_n56();
+update_enabled_n58();
+update_enabled_n52();
+}
+
+
+var fire_n57 = function() {
+globalStore.n1 = globalStore.n1 - 1;
+
+globalStore.n20 = globalStore.n20 - 1;
+
+globalStore.n17 = globalStore.n17 - 1;
+
+globalStore.n18 = globalStore.n18 - 1;
+
+globalStore.n19 = globalStore.n19 - 1;
+
+globalStore.n16 = globalStore.n16 - 1;
+globalStore.n21 = globalStore.n21 + 1;
+
+globalStore.fired_n57 = globalStore.fired_n57 + 1;
+
+
+
+update_enabled_n59();
+update_enabled_n55();
+update_enabled_n73();
+update_enabled_n54();
+update_enabled_n57();
+update_enabled_n53();
+update_enabled_n56();
+update_enabled_n58();
+update_enabled_n52();
+update_enabled_n72();
+update_enabled_n71();
+}
+
+
+var fire_n61 = function() {
+globalStore.n3 = globalStore.n3 - 1;
+globalStore.n5 = globalStore.n5 + 1;
+
+globalStore.fired_n61 = globalStore.fired_n61 + 1;
+
+
+
+update_enabled_n63();
+update_enabled_n61();
+}
+
+
+var fire_n69 = function() {
+globalStore.n12 = globalStore.n12 - 1;
+globalStore.n22 = globalStore.n22 + 1;
+
+globalStore.fired_n69 = globalStore.fired_n69 + 1;
+
+
+
+update_enabled_n70();
+update_enabled_n69();
+update_enabled_n74();
+}
+
+
+var fire_n65 = function() {
+globalStore.n7 = globalStore.n7 - 1;
+globalStore.n8 = globalStore.n8 + 1;
+
+globalStore.fired_n65 = globalStore.fired_n65 + 1;
+
+
+
+update_enabled_n66();
+update_enabled_n65();
+update_enabled_n67();
+update_enabled_n64();
+}
+
+
+var fire_n73 = function() {
+globalStore.n21 = globalStore.n21 - 1;
+globalStore.n26 = globalStore.n26 + 1;
+
+globalStore.fired_n73 = globalStore.fired_n73 + 1;
+
+
+
+update_enabled_n83();
+update_enabled_n72();
+update_enabled_n71();
+update_enabled_n81();
+update_enabled_n82();
+update_enabled_n73();
+}
+
+
+var fire_n77 = function() {
+globalStore.n24 = globalStore.n24 - 1;
+globalStore.n8 = globalStore.n8 + 1;
+
+globalStore.fired_n77 = globalStore.fired_n77 + 1;
+
+
+
+update_enabled_n77();
+update_enabled_n67();
+update_enabled_n79();
+update_enabled_n78();
+update_enabled_n76();
+}
+
+
+var fire_n81 = function() {
+globalStore.n26 = globalStore.n26 - 1;
+globalStore.n27 = globalStore.n27 + 1;
+
+globalStore.fired_n81 = globalStore.fired_n81 + 1;
+
+var old_var_ALN = globalStore.ALN;
+globalStore.ALN = randomInteger({n: globalStore.vars['ALN']['maxValue']});
+var old_var_CAER = globalStore.CAER;
+globalStore.CAER = randomInteger({n: globalStore.vars['CAER']['maxValue']});
+var old_var_LYNM = globalStore.LYNM;
+globalStore.LYNM = uniform({a: globalStore.vars['LYNM']['minValue'], b: globalStore.vars['LYNM']['maxValue']});
+condition();
+
+update_enabled_n83();
+update_enabled_n84();
+update_enabled_n85();
+update_enabled_n81();
+update_enabled_n82();
+}
+
+
+var fire_n85 = function() {
+globalStore.n27 = globalStore.n27 - 1;
+globalStore.n28 = globalStore.n28 + 1;
+
+globalStore.fired_n85 = globalStore.fired_n85 + 1;
+
+
+
+update_enabled_n86();
+update_enabled_n85();
+update_enabled_n87();
+update_enabled_n84();
+}
+
+
+var fire_n89 = function() {
+globalStore.n29 = globalStore.n29 - 1;
+globalStore.n36 = globalStore.n36 + 1;
+
+globalStore.fired_n89 = globalStore.fired_n89 + 1;
+
+var old_var_SULN = globalStore.SULN;
+globalStore.SULN = randomInteger({n: globalStore.vars['SULN']['maxValue']});
+var old_var_LNSP = globalStore.LNSP;
+globalStore.LNSP = randomInteger({n: globalStore.vars['LNSP']['maxValue']});
+
+update_enabled_n88();
+update_enabled_n103();
+update_enabled_n89();
+update_enabled_n102();
+}
+
+
+var fire_n100 = function() {
+globalStore.n35 = globalStore.n35 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n100 = globalStore.fired_n100 + 1;
+
+
+
+update_enabled_n99();
+update_enabled_n100();
+update_enabled_n101();
+}
+
+
+var fire_n109 = function() {
+globalStore.n39 = globalStore.n39 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n109 = globalStore.fired_n109 + 1;
+
+
+
+update_enabled_n108();
+update_enabled_n109();
+}
+
+
+var fire_n122 = function() {
+globalStore.n48 = globalStore.n48 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n122 = globalStore.fired_n122 + 1;
+
+
+
+update_enabled_n122();
+update_enabled_n123();
+}
+
+
+var fire_n113 = function() {
+globalStore.n42 = globalStore.n42 - 1;
+globalStore.n47 = globalStore.n47 + 1;
+
+globalStore.fired_n113 = globalStore.fired_n113 + 1;
+
+
+
+update_enabled_n115();
+update_enabled_n113();
+update_enabled_n121();
+update_enabled_n114();
+update_enabled_n112();
+}
+
+
+var fire_n104 = function() {
+globalStore.n37 = globalStore.n37 - 1;
+globalStore.n42 = globalStore.n42 + 1;
+
+globalStore.fired_n104 = globalStore.fired_n104 + 1;
+
+var old_var_RTTH = globalStore.RTTH;
+globalStore.RTTH = uniform({a: globalStore.vars['RTTH']['minValue'], b: globalStore.vars['RTTH']['maxValue']});
+var old_var_REST = globalStore.REST;
+globalStore.REST = randomInteger({n: globalStore.vars['REST']['maxValue']});
+
+update_enabled_n115();
+update_enabled_n113();
+update_enabled_n114();
+update_enabled_n112();
+update_enabled_n104();
+}
+
+
+var fire_n126 = function() {
+globalStore.n50 = globalStore.n50 - 1;
+globalStore.n48 = globalStore.n48 + 1;
+
+globalStore.fired_n126 = globalStore.fired_n126 + 1;
+
+
+
+update_enabled_n127();
+update_enabled_n126();
+update_enabled_n122();
+update_enabled_n123();
+}
+
+
+var fire_n95 = function() {
+globalStore.n32 = globalStore.n32 - 1;
+globalStore.n41 = globalStore.n41 + 1;
+
+globalStore.fired_n95 = globalStore.fired_n95 + 1;
+
+
+
+update_enabled_n95();
+update_enabled_n111();
+}
+
+
+var fire_n117 = function() {
+globalStore.n43 = globalStore.n43 - 1;
+globalStore.n44 = globalStore.n44 + 1;
+
+globalStore.fired_n117 = globalStore.fired_n117 + 1;
+
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+var old_var_LNSP = globalStore.LNSP;
+globalStore.LNSP = randomInteger({n: globalStore.vars['LNSP']['maxValue']});
+var old_var_SMET = globalStore.SMET;
+globalStore.SMET = randomInteger({n: globalStore.vars['SMET']['maxValue']});
+condition();
+
+update_enabled_n119();
+update_enabled_n117();
+update_enabled_n116();
+update_enabled_n118();
+}
+
+
+var fire_n108 = function() {
+globalStore.n39 = globalStore.n39 - 1;
+globalStore.n30 = globalStore.n30 + 1;
+
+globalStore.fired_n108 = globalStore.fired_n108 + 1;
+
+var old_var_S100BP = globalStore.S100BP;
+globalStore.S100BP = randomInteger({n: globalStore.vars['S100BP']['maxValue']});
+var old_var_LNSP = globalStore.LNSP;
+globalStore.LNSP = randomInteger({n: globalStore.vars['LNSP']['maxValue']});
+var old_var_REPE = globalStore.REPE;
+globalStore.REPE = randomInteger({n: globalStore.vars['REPE']['maxValue']});
+var old_var_SMET = globalStore.SMET;
+globalStore.SMET = randomInteger({n: globalStore.vars['SMET']['maxValue']});
+condition();
+
+update_enabled_n90();
+update_enabled_n108();
+update_enabled_n92();
+update_enabled_n91();
+update_enabled_n109();
+update_enabled_n93();
+}
+
+
+var fire_n52 = function() {
+globalStore.n11 = globalStore.n11 - 1;
+
+globalStore.n1 = globalStore.n1 - 1;
+globalStore.n1 = globalStore.n1 + 1;
+
+globalStore.n20 = globalStore.n20 + 1;
+
+globalStore.fired_n52 = globalStore.fired_n52 + 1;
+
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+
+update_enabled_n59();
+update_enabled_n55();
+update_enabled_n54();
+update_enabled_n57();
+update_enabled_n53();
+update_enabled_n56();
+update_enabled_n58();
+update_enabled_n52();
+}
+
+
+var fire_n56 = function() {
+globalStore.n1 = globalStore.n1 - 1;
+
+globalStore.n15 = globalStore.n15 - 1;
+globalStore.n1 = globalStore.n1 + 1;
+
+globalStore.n18 = globalStore.n18 + 1;
+
+globalStore.fired_n56 = globalStore.fired_n56 + 1;
+
+
+
+update_enabled_n59();
+update_enabled_n55();
+update_enabled_n54();
+update_enabled_n57();
+update_enabled_n53();
+update_enabled_n56();
+update_enabled_n58();
+update_enabled_n52();
+}
+
+
+var fire_n60 = function() {
+globalStore.n2 = globalStore.n2 - 1;
+globalStore.n12 = globalStore.n12 + 1;
+
+globalStore.fired_n60 = globalStore.fired_n60 + 1;
+
+var old_var_SUME = globalStore.SUME;
+globalStore.SUME = randomInteger({n: globalStore.vars['SUME']['maxValue']});
+
+update_enabled_n60();
+update_enabled_n70();
+update_enabled_n69();
+}
+
+
+var fire_n68 = function() {
+globalStore.n9 = globalStore.n9 - 1;
+globalStore.n37 = globalStore.n37 + 1;
+
+globalStore.fired_n68 = globalStore.fired_n68 + 1;
+
+
+
+update_enabled_n68();
+update_enabled_n104();
+}
+
+
+var fire_n64 = function() {
+globalStore.n7 = globalStore.n7 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n64 = globalStore.fired_n64 + 1;
+
+
+
+update_enabled_n66();
+update_enabled_n65();
+update_enabled_n64();
+}
+
+
+var fire_n72 = function() {
+globalStore.n21 = globalStore.n21 - 1;
+globalStore.n26 = globalStore.n26 + 1;
+
+globalStore.fired_n72 = globalStore.fired_n72 + 1;
+
+var old_var_REST = globalStore.REST;
+globalStore.REST = randomInteger({n: globalStore.vars['REST']['maxValue']});
+condition();
+
+update_enabled_n83();
+update_enabled_n72();
+update_enabled_n71();
+update_enabled_n81();
+update_enabled_n82();
+update_enabled_n73();
+}
+
+
+var fire_n76 = function() {
+globalStore.n24 = globalStore.n24 - 1;
+globalStore.n23 = globalStore.n23 + 1;
+
+globalStore.fired_n76 = globalStore.fired_n76 + 1;
+
+
+
+update_enabled_n77();
+update_enabled_n79();
+update_enabled_n76();
+update_enabled_n78();
+update_enabled_n75();
+}
+
+
+var fire_n80 = function() {
+globalStore.n25 = globalStore.n25 - 1;
+globalStore.n38 = globalStore.n38 + 1;
+
+globalStore.fired_n80 = globalStore.fired_n80 + 1;
+
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+
+update_enabled_n80();
+update_enabled_n106();
+update_enabled_n105();
+update_enabled_n107();
+}
+
+
+var fire_n84 = function() {
+globalStore.n27 = globalStore.n27 - 1;
+globalStore.n32 = globalStore.n32 + 1;
+
+globalStore.n31 = globalStore.n31 + 1;
+
+globalStore.fired_n84 = globalStore.fired_n84 + 1;
+
+
+
+update_enabled_n94();
+update_enabled_n85();
+update_enabled_n95();
+update_enabled_n84();
+}
+
+
+var fire_n88 = function() {
+globalStore.n29 = globalStore.n29 - 1;
+globalStore.n47 = globalStore.n47 + 1;
+
+globalStore.fired_n88 = globalStore.fired_n88 + 1;
+
+
+
+update_enabled_n88();
+update_enabled_n89();
+update_enabled_n121();
+}
+
+
+var fire_n99 = function() {
+globalStore.n35 = globalStore.n35 - 1;
+globalStore.n48 = globalStore.n48 + 1;
+
+globalStore.fired_n99 = globalStore.fired_n99 + 1;
+
+
+
+update_enabled_n100();
+update_enabled_n122();
+update_enabled_n123();
+update_enabled_n99();
+update_enabled_n101();
+}
+
+
+var fire_n112 = function() {
+globalStore.n42 = globalStore.n42 - 1;
+globalStore.n9 = globalStore.n9 + 1;
+
+globalStore.fired_n112 = globalStore.fired_n112 + 1;
+
+
+
+update_enabled_n115();
+update_enabled_n113();
+update_enabled_n114();
+update_enabled_n68();
+update_enabled_n112();
+}
+
+
+var fire_n121 = function() {
+globalStore.n47 = globalStore.n47 - 1;
+globalStore.n4 = globalStore.n4 + 1;
+
+globalStore.n3 = globalStore.n3 + 1;
+
+globalStore.fired_n121 = globalStore.fired_n121 + 1;
+
+
+
+update_enabled_n61();
+update_enabled_n62();
+update_enabled_n121();
+}
+
+
+var fire_n103 = function() {
+globalStore.n36 = globalStore.n36 - 1;
+globalStore.n34 = globalStore.n34 + 1;
+
+globalStore.fired_n103 = globalStore.fired_n103 + 1;
+
+
+
+update_enabled_n103();
+update_enabled_n98();
+update_enabled_n102();
+}
+
+
+var fire_n125 = function() {
+globalStore.n49 = globalStore.n49 - 1;
+globalStore.n8 = globalStore.n8 + 1;
+
+globalStore.fired_n125 = globalStore.fired_n125 + 1;
+
+
+
+update_enabled_n125();
+update_enabled_n67();
+update_enabled_n124();
+}
+
+
+var fire_n94 = function() {
+globalStore.n31 = globalStore.n31 - 1;
+globalStore.n45 = globalStore.n45 + 1;
+
+globalStore.fired_n94 = globalStore.fired_n94 + 1;
+
+
+
+update_enabled_n94();
+update_enabled_n111();
+}
+
+
+var fire_n116 = function() {
+globalStore.n43 = globalStore.n43 - 1;
+globalStore.n44 = globalStore.n44 + 1;
+
+globalStore.fired_n116 = globalStore.fired_n116 + 1;
+
+
+
+update_enabled_n119();
+update_enabled_n117();
+update_enabled_n116();
+update_enabled_n118();
+}
+
+
+var fire_n120 = function() {
+globalStore.n46 = globalStore.n46 - 1;
+globalStore.n49 = globalStore.n49 + 1;
+
+globalStore.fired_n120 = globalStore.fired_n120 + 1;
+
+var old_var_MECO = globalStore.MECO;
+globalStore.MECO = randomInteger({n: globalStore.vars['MECO']['maxValue']});
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+
+update_enabled_n125();
+update_enabled_n120();
+update_enabled_n124();
+}
+
+
+var fire_n107 = function() {
+globalStore.n38 = globalStore.n38 - 1;
+globalStore.n47 = globalStore.n47 + 1;
+
+globalStore.fired_n107 = globalStore.fired_n107 + 1;
+
+
+
+update_enabled_n106();
+update_enabled_n105();
+update_enabled_n107();
+update_enabled_n121();
+}
+
+
+var fire_n55 = function() {
+globalStore.n10 = globalStore.n10 - 1;
+
+globalStore.n1 = globalStore.n1 - 1;
+globalStore.n1 = globalStore.n1 + 1;
+
+globalStore.n19 = globalStore.n19 + 1;
+
+globalStore.fired_n55 = globalStore.fired_n55 + 1;
+
+
+
+update_enabled_n59();
+update_enabled_n55();
+update_enabled_n54();
+update_enabled_n57();
+update_enabled_n53();
+update_enabled_n56();
+update_enabled_n58();
+update_enabled_n52();
+}
+
+
+var fire_n59 = function() {
+globalStore.n1 = globalStore.n1 - 1;
+
+globalStore.n15 = globalStore.n15 - 1;
+globalStore.n18 = globalStore.n18 + 1;
+
+globalStore.n1 = globalStore.n1 + 1;
+
+globalStore.fired_n59 = globalStore.fired_n59 + 1;
+
+
+
+update_enabled_n59();
+update_enabled_n55();
+update_enabled_n54();
+update_enabled_n57();
+update_enabled_n53();
+update_enabled_n56();
+update_enabled_n58();
+update_enabled_n52();
+}
+
+
+var fire_n67 = function() {
+globalStore.n8 = globalStore.n8 - 1;
+globalStore.n1 = globalStore.n1 + 1;
+
+globalStore.n11 = globalStore.n11 + 1;
+
+globalStore.n10 = globalStore.n10 + 1;
+
+globalStore.n15 = globalStore.n15 + 1;
+
+globalStore.n14 = globalStore.n14 + 1;
+
+globalStore.n13 = globalStore.n13 + 1;
+
+globalStore.fired_n67 = globalStore.fired_n67 + 1;
+
+
+
+update_enabled_n59();
+update_enabled_n55();
+update_enabled_n67();
+update_enabled_n54();
+update_enabled_n57();
+update_enabled_n53();
+update_enabled_n56();
+update_enabled_n58();
+update_enabled_n52();
+}
+
+
+var fire_n63 = function() {
+globalStore.n6 = globalStore.n6 - 1;
+
+globalStore.n5 = globalStore.n5 - 1;
+globalStore.n23 = globalStore.n23 + 1;
+
+globalStore.fired_n63 = globalStore.fired_n63 + 1;
+
+
+
+update_enabled_n63();
+update_enabled_n75();
+}
+
+
+var fire_n71 = function() {
+globalStore.n21 = globalStore.n21 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n71 = globalStore.fired_n71 + 1;
+
+
+
+update_enabled_n73();
+update_enabled_n72();
+update_enabled_n71();
+}
+
+
+var fire_n75 = function() {
+globalStore.n23 = globalStore.n23 - 1;
+globalStore.n24 = globalStore.n24 + 1;
+
+globalStore.fired_n75 = globalStore.fired_n75 + 1;
+
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+var old_var_MMDI = globalStore.MMDI;
+globalStore.MMDI = uniform({a: globalStore.vars['MMDI']['minValue'], b: globalStore.vars['MMDI']['maxValue']});
+var old_var_REST = globalStore.REST;
+globalStore.REST = randomInteger({n: globalStore.vars['REST']['maxValue']});
+var old_var_BVEM = globalStore.BVEM;
+globalStore.BVEM = randomInteger({n: globalStore.vars['BVEM']['maxValue']});
+var old_var_BVKM = globalStore.BVKM;
+globalStore.BVKM = randomInteger({n: globalStore.vars['BVKM']['maxValue']});
+var old_var_SCSN = globalStore.SCSN;
+globalStore.SCSN = randomInteger({n: globalStore.vars['SCSN']['maxValue']});
+var old_var_REPE = globalStore.REPE;
+globalStore.REPE = randomInteger({n: globalStore.vars['REPE']['maxValue']});
+
+update_enabled_n77();
+update_enabled_n79();
+update_enabled_n75();
+update_enabled_n78();
+update_enabled_n76();
+}
+
+
+var fire_n79 = function() {
+globalStore.n24 = globalStore.n24 - 1;
+globalStore.n43 = globalStore.n43 + 1;
+
+globalStore.fired_n79 = globalStore.fired_n79 + 1;
+
+
+
+update_enabled_n117();
+update_enabled_n77();
+update_enabled_n79();
+update_enabled_n116();
+update_enabled_n78();
+update_enabled_n76();
+}
+
+
+var fire_n83 = function() {
+globalStore.n26 = globalStore.n26 - 1;
+globalStore.n28 = globalStore.n28 + 1;
+
+globalStore.fired_n83 = globalStore.fired_n83 + 1;
+
+
+
+update_enabled_n86();
+update_enabled_n83();
+update_enabled_n87();
+update_enabled_n81();
+update_enabled_n82();
+}
+
+
+var fire_n87 = function() {
+globalStore.n28 = globalStore.n28 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n87 = globalStore.fired_n87 + 1;
+
+
+
+update_enabled_n86();
+update_enabled_n87();
+}
+
+
+var fire_n91 = function() {
+globalStore.n30 = globalStore.n30 - 1;
+globalStore.n9 = globalStore.n9 + 1;
+
+globalStore.fired_n91 = globalStore.fired_n91 + 1;
+
+
+
+update_enabled_n90();
+update_enabled_n68();
+update_enabled_n92();
+update_enabled_n91();
+update_enabled_n93();
+}
+
+
+var fire_n98 = function() {
+globalStore.n34 = globalStore.n34 - 1;
+globalStore.n7 = globalStore.n7 + 1;
+
+globalStore.fired_n98 = globalStore.fired_n98 + 1;
+
+var old_var_STAG = globalStore.STAG;
+globalStore.STAG = randomInteger({n: globalStore.vars['STAG']['maxValue']});
+var old_var_MMDI = globalStore.MMDI;
+globalStore.MMDI = uniform({a: globalStore.vars['MMDI']['minValue'], b: globalStore.vars['MMDI']['maxValue']});
+var old_var_ISMD = globalStore.ISMD;
+globalStore.ISMD = randomInteger({n: globalStore.vars['ISMD']['maxValue']});
+var old_var_LNMD = globalStore.LNMD;
+globalStore.LNMD = randomInteger({n: globalStore.vars['LNMD']['maxValue']});
+var old_var_SCSN = globalStore.SCSN;
+globalStore.SCSN = randomInteger({n: globalStore.vars['SCSN']['maxValue']});
+
+update_enabled_n66();
+update_enabled_n65();
+update_enabled_n64();
+update_enabled_n98();
+}
+
+
+var fire_n111 = function() {
+globalStore.n41 = globalStore.n41 - 1;
+
+globalStore.n45 = globalStore.n45 - 1;
+globalStore.n51 = globalStore.n51 + 1;
+
+globalStore.fired_n111 = globalStore.fired_n111 + 1;
+
+
+
+update_enabled_n111();
+}
+
+
+var fire_n119 = function() {
+globalStore.n44 = globalStore.n44 - 1;
+globalStore.n33 = globalStore.n33 + 1;
+
+globalStore.fired_n119 = globalStore.fired_n119 + 1;
+
+var old_var_S100BP = globalStore.S100BP;
+globalStore.S100BP = randomInteger({n: globalStore.vars['S100BP']['maxValue']});
+var old_var_S100B = globalStore.S100B;
+globalStore.S100B = randomInteger({n: globalStore.vars['S100B']['maxValue']});
+
+update_enabled_n119();
+update_enabled_n96();
+update_enabled_n118();
+update_enabled_n97();
+}
+
+
+var fire_n102 = function() {
+globalStore.n36 = globalStore.n36 - 1;
+globalStore.n47 = globalStore.n47 + 1;
+
+globalStore.fired_n102 = globalStore.fired_n102 + 1;
+
+
+
+update_enabled_n121();
+update_enabled_n103();
+update_enabled_n102();
+}
+
+
+var fire_n124 = function() {
+globalStore.n49 = globalStore.n49 - 1;
+globalStore.n48 = globalStore.n48 + 1;
+
+globalStore.fired_n124 = globalStore.fired_n124 + 1;
+
+
+
+update_enabled_n125();
+update_enabled_n122();
+update_enabled_n123();
+update_enabled_n124();
+}
+
+
+var fire_n93 = function() {
+globalStore.n30 = globalStore.n30 - 1;
+globalStore.n29 = globalStore.n29 + 1;
+
+globalStore.fired_n93 = globalStore.fired_n93 + 1;
+
+
+
+update_enabled_n90();
+update_enabled_n89();
+update_enabled_n92();
+update_enabled_n91();
+update_enabled_n88();
+update_enabled_n93();
+}
+
+
+var fire_n115 = function() {
+globalStore.n42 = globalStore.n42 - 1;
+globalStore.n25 = globalStore.n25 + 1;
+
+globalStore.fired_n115 = globalStore.fired_n115 + 1;
+
+
+
+update_enabled_n80();
+update_enabled_n115();
+update_enabled_n113();
+update_enabled_n114();
+update_enabled_n112();
+}
+
+
+var fire_n106 = function() {
+globalStore.n38 = globalStore.n38 - 1;
+globalStore.n34 = globalStore.n34 + 1;
+
+globalStore.fired_n106 = globalStore.fired_n106 + 1;
+
+
+
+update_enabled_n106();
+update_enabled_n105();
+update_enabled_n107();
+update_enabled_n98();
+}
+
+
+var fire_n97 = function() {
+globalStore.n33 = globalStore.n33 - 1;
+globalStore.n50 = globalStore.n50 + 1;
+
+globalStore.fired_n97 = globalStore.fired_n97 + 1;
+
+
+
+update_enabled_n127();
+update_enabled_n126();
+update_enabled_n96();
+update_enabled_n97();
+}
+
+
+var getXMLtag = function (type) {
+if (type.includes("Double")) {
+return "float";
+} else if (type.includes("Integer")) {
+return "integer";
+} else if (type.includes("Boolean")) {
+return "boolean";
+}
+return "string";
+}
+
+var log_transition = function(transition) {
+if (transition !== "None") {
+var MMDITag = getXMLtag(globalStore.vars.MMDI.type);
+var ALNTag = getXMLtag(globalStore.vars.ALN.type);
+var SULNTag = getXMLtag(globalStore.vars.SULN.type);
+var SCSNTag = getXMLtag(globalStore.vars.SCSN.type);
+var REPETag = getXMLtag(globalStore.vars.REPE.type);
+var RTTHTag = getXMLtag(globalStore.vars.RTTH.type);
+var TUTHTag = getXMLtag(globalStore.vars.TUTH.type);
+var CAERTag = getXMLtag(globalStore.vars.CAER.type);
+var SUMETag = getXMLtag(globalStore.vars.SUME.type);
+var PLNMTag = getXMLtag(globalStore.vars.PLNM.type);
+var ULCETag = getXMLtag(globalStore.vars.ULCE.type);
+var MECOTag = getXMLtag(globalStore.vars.MECO.type);
+var STAGTag = getXMLtag(globalStore.vars.STAG.type);
+var BVEMTag = getXMLtag(globalStore.vars.BVEM.type);
+var ISMDTag = getXMLtag(globalStore.vars.ISMD.type);
+var S100BPTag = getXMLtag(globalStore.vars.S100BP.type);
+var BVKMTag = getXMLtag(globalStore.vars.BVKM.type);
+var MELATag = getXMLtag(globalStore.vars.MELA.type);
+var S100BTag = getXMLtag(globalStore.vars.S100B.type);
+var LYNMTag = getXMLtag(globalStore.vars.LYNM.type);
+var MIRATag = getXMLtag(globalStore.vars.MIRA.type);
+var SMETTag = getXMLtag(globalStore.vars.SMET.type);
+var PAAGTag = getXMLtag(globalStore.vars.PAAG.type);
+var RESTTag = getXMLtag(globalStore.vars.REST.type);
+var LNMDTag = getXMLtag(globalStore.vars.LNMD.type);
+var LNSPTag = getXMLtag(globalStore.vars.LNSP.type);
+globalStore.xesOutput += "<event>\n";
+globalStore.xesOutput +=  "<string key=\"concept:name\" value=\"" + transition + "\"/>\n";
+if (globalStore.MMDI !== undefined &&  globalStore.MMDI !== null) {
+if (globalStore.vars.MMDI.valueMapping) {
+var MMDIValue = globalStore.vars.MMDI.valueMapping[globalStore.MMDI] || globalStore.MMDI;
+globalStore.xesOutput +=  "<" + MMDITag +   " key=\"MMDI\" value=\"" + MMDIValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + MMDITag +   " key=\"MMDI\" value=\"" + globalStore.MMDI + "\"/>\n";
+}
+}
+if (globalStore.ALN !== undefined &&  globalStore.ALN !== null) {
+if (globalStore.vars.ALN.valueMapping) {
+var ALNValue = globalStore.vars.ALN.valueMapping[globalStore.ALN] || globalStore.ALN;
+globalStore.xesOutput +=  "<" + ALNTag +   " key=\"ALN\" value=\"" + ALNValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + ALNTag +   " key=\"ALN\" value=\"" + globalStore.ALN + "\"/>\n";
+}
+}
+if (globalStore.SULN !== undefined &&  globalStore.SULN !== null) {
+if (globalStore.vars.SULN.valueMapping) {
+var SULNValue = globalStore.vars.SULN.valueMapping[globalStore.SULN] || globalStore.SULN;
+globalStore.xesOutput +=  "<" + SULNTag +   " key=\"SULN\" value=\"" + SULNValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + SULNTag +   " key=\"SULN\" value=\"" + globalStore.SULN + "\"/>\n";
+}
+}
+if (globalStore.SCSN !== undefined &&  globalStore.SCSN !== null) {
+if (globalStore.vars.SCSN.valueMapping) {
+var SCSNValue = globalStore.vars.SCSN.valueMapping[globalStore.SCSN] || globalStore.SCSN;
+globalStore.xesOutput +=  "<" + SCSNTag +   " key=\"SCSN\" value=\"" + SCSNValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + SCSNTag +   " key=\"SCSN\" value=\"" + globalStore.SCSN + "\"/>\n";
+}
+}
+if (globalStore.REPE !== undefined &&  globalStore.REPE !== null) {
+if (globalStore.vars.REPE.valueMapping) {
+var REPEValue = globalStore.vars.REPE.valueMapping[globalStore.REPE] || globalStore.REPE;
+globalStore.xesOutput +=  "<" + REPETag +   " key=\"REPE\" value=\"" + REPEValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + REPETag +   " key=\"REPE\" value=\"" + globalStore.REPE + "\"/>\n";
+}
+}
+if (globalStore.RTTH !== undefined &&  globalStore.RTTH !== null) {
+if (globalStore.vars.RTTH.valueMapping) {
+var RTTHValue = globalStore.vars.RTTH.valueMapping[globalStore.RTTH] || globalStore.RTTH;
+globalStore.xesOutput +=  "<" + RTTHTag +   " key=\"RTTH\" value=\"" + RTTHValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + RTTHTag +   " key=\"RTTH\" value=\"" + globalStore.RTTH + "\"/>\n";
+}
+}
+if (globalStore.TUTH !== undefined &&  globalStore.TUTH !== null) {
+if (globalStore.vars.TUTH.valueMapping) {
+var TUTHValue = globalStore.vars.TUTH.valueMapping[globalStore.TUTH] || globalStore.TUTH;
+globalStore.xesOutput +=  "<" + TUTHTag +   " key=\"TUTH\" value=\"" + TUTHValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + TUTHTag +   " key=\"TUTH\" value=\"" + globalStore.TUTH + "\"/>\n";
+}
+}
+if (globalStore.CAER !== undefined &&  globalStore.CAER !== null) {
+if (globalStore.vars.CAER.valueMapping) {
+var CAERValue = globalStore.vars.CAER.valueMapping[globalStore.CAER] || globalStore.CAER;
+globalStore.xesOutput +=  "<" + CAERTag +   " key=\"CAER\" value=\"" + CAERValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + CAERTag +   " key=\"CAER\" value=\"" + globalStore.CAER + "\"/>\n";
+}
+}
+if (globalStore.SUME !== undefined &&  globalStore.SUME !== null) {
+if (globalStore.vars.SUME.valueMapping) {
+var SUMEValue = globalStore.vars.SUME.valueMapping[globalStore.SUME] || globalStore.SUME;
+globalStore.xesOutput +=  "<" + SUMETag +   " key=\"SUME\" value=\"" + SUMEValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + SUMETag +   " key=\"SUME\" value=\"" + globalStore.SUME + "\"/>\n";
+}
+}
+if (globalStore.PLNM !== undefined &&  globalStore.PLNM !== null) {
+if (globalStore.vars.PLNM.valueMapping) {
+var PLNMValue = globalStore.vars.PLNM.valueMapping[globalStore.PLNM] || globalStore.PLNM;
+globalStore.xesOutput +=  "<" + PLNMTag +   " key=\"PLNM\" value=\"" + PLNMValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + PLNMTag +   " key=\"PLNM\" value=\"" + globalStore.PLNM + "\"/>\n";
+}
+}
+if (globalStore.ULCE !== undefined &&  globalStore.ULCE !== null) {
+if (globalStore.vars.ULCE.valueMapping) {
+var ULCEValue = globalStore.vars.ULCE.valueMapping[globalStore.ULCE] || globalStore.ULCE;
+globalStore.xesOutput +=  "<" + ULCETag +   " key=\"ULCE\" value=\"" + ULCEValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + ULCETag +   " key=\"ULCE\" value=\"" + globalStore.ULCE + "\"/>\n";
+}
+}
+if (globalStore.MECO !== undefined &&  globalStore.MECO !== null) {
+if (globalStore.vars.MECO.valueMapping) {
+var MECOValue = globalStore.vars.MECO.valueMapping[globalStore.MECO] || globalStore.MECO;
+globalStore.xesOutput +=  "<" + MECOTag +   " key=\"MECO\" value=\"" + MECOValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + MECOTag +   " key=\"MECO\" value=\"" + globalStore.MECO + "\"/>\n";
+}
+}
+if (globalStore.STAG !== undefined &&  globalStore.STAG !== null) {
+if (globalStore.vars.STAG.valueMapping) {
+var STAGValue = globalStore.vars.STAG.valueMapping[globalStore.STAG] || globalStore.STAG;
+globalStore.xesOutput +=  "<" + STAGTag +   " key=\"STAG\" value=\"" + STAGValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + STAGTag +   " key=\"STAG\" value=\"" + globalStore.STAG + "\"/>\n";
+}
+}
+if (globalStore.BVEM !== undefined &&  globalStore.BVEM !== null) {
+if (globalStore.vars.BVEM.valueMapping) {
+var BVEMValue = globalStore.vars.BVEM.valueMapping[globalStore.BVEM] || globalStore.BVEM;
+globalStore.xesOutput +=  "<" + BVEMTag +   " key=\"BVEM\" value=\"" + BVEMValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + BVEMTag +   " key=\"BVEM\" value=\"" + globalStore.BVEM + "\"/>\n";
+}
+}
+if (globalStore.ISMD !== undefined &&  globalStore.ISMD !== null) {
+if (globalStore.vars.ISMD.valueMapping) {
+var ISMDValue = globalStore.vars.ISMD.valueMapping[globalStore.ISMD] || globalStore.ISMD;
+globalStore.xesOutput +=  "<" + ISMDTag +   " key=\"ISMD\" value=\"" + ISMDValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + ISMDTag +   " key=\"ISMD\" value=\"" + globalStore.ISMD + "\"/>\n";
+}
+}
+if (globalStore.S100BP !== undefined &&  globalStore.S100BP !== null) {
+if (globalStore.vars.S100BP.valueMapping) {
+var S100BPValue = globalStore.vars.S100BP.valueMapping[globalStore.S100BP] || globalStore.S100BP;
+globalStore.xesOutput +=  "<" + S100BPTag +   " key=\"S100BP\" value=\"" + S100BPValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + S100BPTag +   " key=\"S100BP\" value=\"" + globalStore.S100BP + "\"/>\n";
+}
+}
+if (globalStore.BVKM !== undefined &&  globalStore.BVKM !== null) {
+if (globalStore.vars.BVKM.valueMapping) {
+var BVKMValue = globalStore.vars.BVKM.valueMapping[globalStore.BVKM] || globalStore.BVKM;
+globalStore.xesOutput +=  "<" + BVKMTag +   " key=\"BVKM\" value=\"" + BVKMValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + BVKMTag +   " key=\"BVKM\" value=\"" + globalStore.BVKM + "\"/>\n";
+}
+}
+if (globalStore.MELA !== undefined &&  globalStore.MELA !== null) {
+if (globalStore.vars.MELA.valueMapping) {
+var MELAValue = globalStore.vars.MELA.valueMapping[globalStore.MELA] || globalStore.MELA;
+globalStore.xesOutput +=  "<" + MELATag +   " key=\"MELA\" value=\"" + MELAValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + MELATag +   " key=\"MELA\" value=\"" + globalStore.MELA + "\"/>\n";
+}
+}
+if (globalStore.S100B !== undefined &&  globalStore.S100B !== null) {
+if (globalStore.vars.S100B.valueMapping) {
+var S100BValue = globalStore.vars.S100B.valueMapping[globalStore.S100B] || globalStore.S100B;
+globalStore.xesOutput +=  "<" + S100BTag +   " key=\"S100B\" value=\"" + S100BValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + S100BTag +   " key=\"S100B\" value=\"" + globalStore.S100B + "\"/>\n";
+}
+}
+if (globalStore.LYNM !== undefined &&  globalStore.LYNM !== null) {
+if (globalStore.vars.LYNM.valueMapping) {
+var LYNMValue = globalStore.vars.LYNM.valueMapping[globalStore.LYNM] || globalStore.LYNM;
+globalStore.xesOutput +=  "<" + LYNMTag +   " key=\"LYNM\" value=\"" + LYNMValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + LYNMTag +   " key=\"LYNM\" value=\"" + globalStore.LYNM + "\"/>\n";
+}
+}
+if (globalStore.MIRA !== undefined &&  globalStore.MIRA !== null) {
+if (globalStore.vars.MIRA.valueMapping) {
+var MIRAValue = globalStore.vars.MIRA.valueMapping[globalStore.MIRA] || globalStore.MIRA;
+globalStore.xesOutput +=  "<" + MIRATag +   " key=\"MIRA\" value=\"" + MIRAValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + MIRATag +   " key=\"MIRA\" value=\"" + globalStore.MIRA + "\"/>\n";
+}
+}
+if (globalStore.SMET !== undefined &&  globalStore.SMET !== null) {
+if (globalStore.vars.SMET.valueMapping) {
+var SMETValue = globalStore.vars.SMET.valueMapping[globalStore.SMET] || globalStore.SMET;
+globalStore.xesOutput +=  "<" + SMETTag +   " key=\"SMET\" value=\"" + SMETValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + SMETTag +   " key=\"SMET\" value=\"" + globalStore.SMET + "\"/>\n";
+}
+}
+if (globalStore.PAAG !== undefined &&  globalStore.PAAG !== null) {
+if (globalStore.vars.PAAG.valueMapping) {
+var PAAGValue = globalStore.vars.PAAG.valueMapping[globalStore.PAAG] || globalStore.PAAG;
+globalStore.xesOutput +=  "<" + PAAGTag +   " key=\"PAAG\" value=\"" + PAAGValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + PAAGTag +   " key=\"PAAG\" value=\"" + globalStore.PAAG + "\"/>\n";
+}
+}
+if (globalStore.REST !== undefined &&  globalStore.REST !== null) {
+if (globalStore.vars.REST.valueMapping) {
+var RESTValue = globalStore.vars.REST.valueMapping[globalStore.REST] || globalStore.REST;
+globalStore.xesOutput +=  "<" + RESTTag +   " key=\"REST\" value=\"" + RESTValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + RESTTag +   " key=\"REST\" value=\"" + globalStore.REST + "\"/>\n";
+}
+}
+if (globalStore.LNMD !== undefined &&  globalStore.LNMD !== null) {
+if (globalStore.vars.LNMD.valueMapping) {
+var LNMDValue = globalStore.vars.LNMD.valueMapping[globalStore.LNMD] || globalStore.LNMD;
+globalStore.xesOutput +=  "<" + LNMDTag +   " key=\"LNMD\" value=\"" + LNMDValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + LNMDTag +   " key=\"LNMD\" value=\"" + globalStore.LNMD + "\"/>\n";
+}
+}
+if (globalStore.LNSP !== undefined &&  globalStore.LNSP !== null) {
+if (globalStore.vars.LNSP.valueMapping) {
+var LNSPValue = globalStore.vars.LNSP.valueMapping[globalStore.LNSP] || globalStore.LNSP;
+globalStore.xesOutput +=  "<" + LNSPTag +   " key=\"LNSP\" value=\"" + LNSPValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + LNSPTag +   " key=\"LNSP\" value=\"" + globalStore.LNSP + "\"/>\n";
+}
+}
+globalStore.xesOutput +=  "</event>\n";
+globalStore.trace += globalStore.xesOutput;
+}
+};
+
+var simulator_loop = function(steps) {
+
+globalStore.xesOutput = "";
+
+var enabledTransitions = filter(function(x) {
+return (x == 0 && globalStore.enabled_n54)||
+(x == 1 && globalStore.enabled_n58)||
+(x == 2 && globalStore.enabled_n66)||
+(x == 3 && globalStore.enabled_n70)||
+(x == 4 && globalStore.enabled_n62)||
+(x == 5 && globalStore.enabled_n74)||
+(x == 6 && globalStore.enabled_n78)||
+(x == 7 && globalStore.enabled_n82)||
+(x == 8 && globalStore.enabled_n86)||
+(x == 9 && globalStore.enabled_n90)||
+(x == 10 && globalStore.enabled_n101)||
+(x == 11 && globalStore.enabled_n110)||
+(x == 12 && globalStore.enabled_n123)||
+(x == 13 && globalStore.enabled_n92)||
+(x == 14 && globalStore.enabled_n114)||
+(x == 15 && globalStore.enabled_n105)||
+(x == 16 && globalStore.enabled_n127)||
+(x == 17 && globalStore.enabled_n96)||
+(x == 18 && globalStore.enabled_n118)||
+(x == 19 && globalStore.enabled_n53)||
+(x == 20 && globalStore.enabled_n57)||
+(x == 21 && globalStore.enabled_n61)||
+(x == 22 && globalStore.enabled_n69)||
+(x == 23 && globalStore.enabled_n65)||
+(x == 24 && globalStore.enabled_n73)||
+(x == 25 && globalStore.enabled_n77)||
+(x == 26 && globalStore.enabled_n81)||
+(x == 27 && globalStore.enabled_n85)||
+(x == 28 && globalStore.enabled_n89)||
+(x == 29 && globalStore.enabled_n100)||
+(x == 30 && globalStore.enabled_n109)||
+(x == 31 && globalStore.enabled_n122)||
+(x == 32 && globalStore.enabled_n113)||
+(x == 33 && globalStore.enabled_n104)||
+(x == 34 && globalStore.enabled_n126)||
+(x == 35 && globalStore.enabled_n95)||
+(x == 36 && globalStore.enabled_n117)||
+(x == 37 && globalStore.enabled_n108)||
+(x == 38 && globalStore.enabled_n52)||
+(x == 39 && globalStore.enabled_n56)||
+(x == 40 && globalStore.enabled_n60)||
+(x == 41 && globalStore.enabled_n68)||
+(x == 42 && globalStore.enabled_n64)||
+(x == 43 && globalStore.enabled_n72)||
+(x == 44 && globalStore.enabled_n76)||
+(x == 45 && globalStore.enabled_n80)||
+(x == 46 && globalStore.enabled_n84)||
+(x == 47 && globalStore.enabled_n88)||
+(x == 48 && globalStore.enabled_n99)||
+(x == 49 && globalStore.enabled_n112)||
+(x == 50 && globalStore.enabled_n121)||
+(x == 51 && globalStore.enabled_n103)||
+(x == 52 && globalStore.enabled_n125)||
+(x == 53 && globalStore.enabled_n94)||
+(x == 54 && globalStore.enabled_n116)||
+(x == 55 && globalStore.enabled_n120)||
+(x == 56 && globalStore.enabled_n107)||
+(x == 57 && globalStore.enabled_n55)||
+(x == 58 && globalStore.enabled_n59)||
+(x == 59 && globalStore.enabled_n67)||
+(x == 60 && globalStore.enabled_n63)||
+(x == 61 && globalStore.enabled_n71)||
+(x == 62 && globalStore.enabled_n75)||
+(x == 63 && globalStore.enabled_n79)||
+(x == 64 && globalStore.enabled_n83)||
+(x == 65 && globalStore.enabled_n87)||
+(x == 66 && globalStore.enabled_n91)||
+(x == 67 && globalStore.enabled_n98)||
+(x == 68 && globalStore.enabled_n111)||
+(x == 69 && globalStore.enabled_n119)||
+(x == 70 && globalStore.enabled_n102)||
+(x == 71 && globalStore.enabled_n124)||
+(x == 72 && globalStore.enabled_n93)||
+(x == 73 && globalStore.enabled_n115)||
+(x == 74 && globalStore.enabled_n106)||
+(x == 75 && globalStore.enabled_n97);
+}, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75]);
+
+if (steps <= 0) {
+return;
+}
+
+if (enabledTransitions.length == 0) {
+return;
+}
+
+if (globalStore.n51 > 0) {
+return;
+}
+
+var transition = sample(Categorical({vs: enabledTransitions}));
+
+if (transition == 0) {
+log_transition("LNS(n54)");
+fire_n54();
+}
+else if (transition == 1) {
+log_transition("MRIH");
+fire_n58();
+}
+else if (transition == 2) {
+log_transition("None");
+fire_n66();
+}
+else if (transition == 3) {
+log_transition("None");
+fire_n70();
+}
+else if (transition == 4) {
+log_transition("REE(n62)");
+fire_n62();
+}
+else if (transition == 5) {
+log_transition("HEX");
+fire_n74();
+}
+else if (transition == 6) {
+log_transition("None");
+fire_n78();
+}
+else if (transition == 7) {
+log_transition("None");
+fire_n82();
+}
+else if (transition == 8) {
+log_transition("BMI");
+fire_n86();
+}
+else if (transition == 9) {
+log_transition("None");
+fire_n90();
+}
+else if (transition == 10) {
+log_transition("None");
+fire_n101();
+}
+else if (transition == 11) {
+log_transition("AITDS");
+fire_n110();
+}
+else if (transition == 12) {
+log_transition("None");
+fire_n123();
+}
+else if (transition == 13) {
+log_transition("None");
+fire_n92();
+}
+else if (transition == 14) {
+log_transition("None");
+fire_n114();
+}
+else if (transition == 15) {
+log_transition("None");
+fire_n105();
+}
+else if (transition == 16) {
+log_transition("None");
+fire_n127();
+}
+else if (transition == 17) {
+log_transition("PCN(n96)");
+fire_n96();
+}
+else if (transition == 18) {
+log_transition("None");
+fire_n118();
+}
+else if (transition == 19) {
+log_transition("LDH");
+fire_n53();
+}
+else if (transition == 20) {
+log_transition("None");
+fire_n57();
+}
+else if (transition == 21) {
+log_transition("SLNB");
+fire_n61();
+}
+else if (transition == 22) {
+log_transition("EXC");
+fire_n69();
+}
+else if (transition == 23) {
+log_transition("None");
+fire_n65();
+}
+else if (transition == 24) {
+log_transition("None");
+fire_n73();
+}
+else if (transition == 25) {
+log_transition("None");
+fire_n77();
+}
+else if (transition == 26) {
+log_transition("LAELN");
+fire_n81();
+}
+else if (transition == 27) {
+log_transition("RATH(n85)");
+fire_n85();
+}
+else if (transition == 28) {
+log_transition("LNS(n89)");
+fire_n89();
+}
+else if (transition == 29) {
+log_transition("None");
+fire_n100();
+}
+else if (transition == 30) {
+log_transition("None");
+fire_n109();
+}
+else if (transition == 31) {
+log_transition("None");
+fire_n122();
+}
+else if (transition == 32) {
+log_transition("None");
+fire_n113();
+}
+else if (transition == 33) {
+log_transition("HEXREE");
+fire_n104();
+}
+else if (transition == 34) {
+log_transition("None");
+fire_n126();
+}
+else if (transition == 35) {
+log_transition("APDA(n95)");
+fire_n95();
+}
+else if (transition == 36) {
+log_transition("LNS(n117)");
+fire_n117();
+}
+else if (transition == 37) {
+log_transition("SCE");
+fire_n108();
+}
+else if (transition == 38) {
+log_transition("PCTA");
+fire_n52();
+}
+else if (transition == 39) {
+log_transition("None");
+fire_n56();
+}
+else if (transition == 40) {
+log_transition("FCE");
+fire_n60();
+}
+else if (transition == 41) {
+log_transition("REE(n68)");
+fire_n68();
+}
+else if (transition == 42) {
+log_transition("None");
+fire_n64();
+}
+else if (transition == 43) {
+log_transition("REE(n72)");
+fire_n72();
+}
+else if (transition == 44) {
+log_transition("REE(n76)");
+fire_n76();
+}
+else if (transition == 45) {
+log_transition("PCN(n80)");
+fire_n80();
+}
+else if (transition == 46) {
+log_transition("None");
+fire_n84();
+}
+else if (transition == 47) {
+log_transition("None");
+fire_n88();
+}
+else if (transition == 48) {
+log_transition("None");
+fire_n99();
+}
+else if (transition == 49) {
+log_transition("None");
+fire_n112();
+}
+else if (transition == 50) {
+log_transition("None");
+fire_n121();
+}
+else if (transition == 51) {
+log_transition("None");
+fire_n103();
+}
+else if (transition == 52) {
+log_transition("None");
+fire_n125();
+}
+else if (transition == 53) {
+log_transition("RATH(n94)");
+fire_n94();
+}
+else if (transition == 54) {
+log_transition("None");
+fire_n116();
+}
+else if (transition == 55) {
+log_transition("DCM(n120)");
+fire_n120();
+}
+else if (transition == 56) {
+log_transition("None");
+fire_n107();
+}
+else if (transition == 57) {
+log_transition("None");
+fire_n55();
+}
+else if (transition == 58) {
+log_transition("S100B(n59)");
+fire_n59();
+}
+else if (transition == 59) {
+log_transition("None");
+fire_n67();
+}
+else if (transition == 60) {
+log_transition("None");
+fire_n63();
+}
+else if (transition == 61) {
+log_transition("None");
+fire_n71();
+}
+else if (transition == 62) {
+log_transition("HEXSLNB");
+fire_n75();
+}
+else if (transition == 63) {
+log_transition("None");
+fire_n79();
+}
+else if (transition == 64) {
+log_transition("None");
+fire_n83();
+}
+else if (transition == 65) {
+log_transition("APDA(n87)");
+fire_n87();
+}
+else if (transition == 66) {
+log_transition("None");
+fire_n91();
+}
+else if (transition == 67) {
+log_transition("DCM(n98)");
+fire_n98();
+}
+else if (transition == 68) {
+log_transition("None");
+fire_n111();
+}
+else if (transition == 69) {
+log_transition("S100B(n119)");
+fire_n119();
+}
+else if (transition == 70) {
+log_transition("None");
+fire_n102();
+}
+else if (transition == 71) {
+log_transition("None");
+fire_n124();
+}
+else if (transition == 72) {
+log_transition("None");
+fire_n93();
+}
+else if (transition == 73) {
+log_transition("None");
+fire_n115();
+}
+else if (transition == 74) {
+log_transition("None");
+fire_n106();
+}
+else if (transition == 75) {
+log_transition("None");
+fire_n97();
+}
+else {
+console.log("Selected illegal transition; should never happen.");
+}
+simulator_loop(steps - 1);
+}
+
+var simulator = function(){
+init();
+update_enabled_n54();
+update_enabled_n58();
+update_enabled_n66();
+update_enabled_n70();
+update_enabled_n62();
+update_enabled_n74();
+update_enabled_n78();
+update_enabled_n82();
+update_enabled_n86();
+update_enabled_n90();
+update_enabled_n101();
+update_enabled_n110();
+update_enabled_n123();
+update_enabled_n92();
+update_enabled_n114();
+update_enabled_n105();
+update_enabled_n127();
+update_enabled_n96();
+update_enabled_n118();
+update_enabled_n53();
+update_enabled_n57();
+update_enabled_n61();
+update_enabled_n69();
+update_enabled_n65();
+update_enabled_n73();
+update_enabled_n77();
+update_enabled_n81();
+update_enabled_n85();
+update_enabled_n89();
+update_enabled_n100();
+update_enabled_n109();
+update_enabled_n122();
+update_enabled_n113();
+update_enabled_n104();
+update_enabled_n126();
+update_enabled_n95();
+update_enabled_n117();
+update_enabled_n108();
+update_enabled_n52();
+update_enabled_n56();
+update_enabled_n60();
+update_enabled_n68();
+update_enabled_n64();
+update_enabled_n72();
+update_enabled_n76();
+update_enabled_n80();
+update_enabled_n84();
+update_enabled_n88();
+update_enabled_n99();
+update_enabled_n112();
+update_enabled_n121();
+update_enabled_n103();
+update_enabled_n125();
+update_enabled_n94();
+update_enabled_n116();
+update_enabled_n120();
+update_enabled_n107();
+update_enabled_n55();
+update_enabled_n59();
+update_enabled_n67();
+update_enabled_n63();
+update_enabled_n71();
+update_enabled_n75();
+update_enabled_n79();
+update_enabled_n83();
+update_enabled_n87();
+update_enabled_n91();
+update_enabled_n98();
+update_enabled_n111();
+update_enabled_n119();
+update_enabled_n102();
+update_enabled_n124();
+update_enabled_n93();
+update_enabled_n115();
+update_enabled_n106();
+update_enabled_n97();
+
+globalStore.trace += "<trace>\n";
+
+simulator_loop(50);
+
+globalStore.trace += "</trace>\n";
+
+console.log(globalStore.trace);
+
+return;
+}
+
+var dist = Infer({
+method: 'MCMC', 
+samples: 5000,
+},simulator);
+

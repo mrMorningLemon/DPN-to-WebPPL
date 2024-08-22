@@ -1,0 +1,917 @@
+var init = function(){
+globalStore.countEnabled = 0;
+globalStore.trace = "";
+globalStore.n2 = 0;
+globalStore.n5 = 0;
+globalStore.n4 = 0;
+globalStore.n3 = 0;
+globalStore.n1 = 1;
+globalStore.n6 = 0;
+globalStore.n7 = 0;
+globalStore.n8 = 0;
+globalStore.n9 = 0;
+
+globalStore.enabled_n18 = false; // Send for Credit Collection
+globalStore.enabled_n22 = false; // Notify Result Appeal to Offender
+globalStore.enabled_n26 = false; // Payment
+globalStore.enabled_n27 = false; // Payment
+globalStore.enabled_n12 = false; // Insert Fine Notification
+globalStore.enabled_n20 = false; // Send Appeal to Prefecture
+globalStore.enabled_n28 = false; // None
+globalStore.enabled_n10 = false; // Create Fine
+globalStore.enabled_n17 = false; // Appeal to Judge
+globalStore.enabled_n21 = false; // Receive Result Appeal from Prefecture
+globalStore.enabled_n23 = false; // Payment
+globalStore.enabled_n25 = false; // None
+globalStore.enabled_n15 = false; // None
+globalStore.enabled_n13 = false; // Insert Date Appeal to Prefecture
+globalStore.enabled_n11 = false; // Send Fine
+globalStore.enabled_n14 = false; // None
+globalStore.enabled_n24 = false; // Add penalty
+globalStore.enabled_n16 = false; // None
+globalStore.enabled_n19 = false; // None
+
+globalStore.fired_n18 = 0;
+globalStore.fired_n22 = 0;
+globalStore.fired_n26 = 0;
+globalStore.fired_n27 = 0;
+globalStore.fired_n12 = 0;
+globalStore.fired_n20 = 0;
+globalStore.fired_n28 = 0;
+globalStore.fired_n10 = 0;
+globalStore.fired_n17 = 0;
+globalStore.fired_n21 = 0;
+globalStore.fired_n23 = 0;
+globalStore.fired_n25 = 0;
+globalStore.fired_n15 = 0;
+globalStore.fired_n13 = 0;
+globalStore.fired_n11 = 0;
+globalStore.fired_n14 = 0;
+globalStore.fired_n24 = 0;
+globalStore.fired_n16 = 0;
+globalStore.fired_n19 = 0;
+
+globalStore.vars = { delaySend : {'maxValue': 100000.0, 'minValue': 0.0, 'type': 'java.lang.Integer'}, amount : {'maxValue': 100000.0, 'minValue': 0.0, 'type': 'java.lang.Double'}, dismissal : {'type': 'java.lang.Long', 'minVale': 0, 'maxValue': 3, 'valueMapping': {0: 'G', 1: 'NIL', 2: '#'}}, totalPaymentAmount : {'maxValue': 100000.0, 'minValue': 0.0, 'type': 'java.lang.Double'}, delayJudge : {'maxValue': 100000.0, 'minValue': 0.0, 'type': 'java.lang.Integer'}, expense : {'maxValue': 10000.0, 'minValue': 0.0, 'type': 'java.lang.Double'}, points : {'maxValue': 100.0, 'minValue': 0.0, 'type': 'java.lang.Integer'}, delayPrefecture : {'maxValue': 100000.0, 'minValue': 0.0, 'type': 'java.lang.Integer'} };
+
+globalStore.delaySend = 0;
+globalStore.amount = 0;
+globalStore.totalPaymentAmount = 0;
+globalStore.delayJudge = 0;
+globalStore.expense = 0;
+globalStore.points = 0;
+globalStore.delayPrefecture = 0;
+}
+
+var update_enabled_n18 = function() {
+if(globalStore.n3 > 0 && globalStore.totalPaymentAmount<globalStore.amount+globalStore.expense) {
+if (!globalStore.enabled_n18) {
+globalStore.enabled_n18 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n18) {
+globalStore.enabled_n18 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n22 = function() {
+if(globalStore.n8 > 0) {
+if (!globalStore.enabled_n22) {
+globalStore.enabled_n22 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n22) {
+globalStore.enabled_n22 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n26 = function() {
+if(globalStore.n9 > 0) {
+if (!globalStore.enabled_n26) {
+globalStore.enabled_n26 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n26) {
+globalStore.enabled_n26 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n27 = function() {
+if(globalStore.n3 > 0) {
+if (!globalStore.enabled_n27) {
+globalStore.enabled_n27 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n27) {
+globalStore.enabled_n27 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n12 = function() {
+if(globalStore.n2 > 0) {
+if (!globalStore.enabled_n12) {
+globalStore.enabled_n12 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n12) {
+globalStore.enabled_n12 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n20 = function() {
+if(globalStore.n6 > 0) {
+if (!globalStore.enabled_n20) {
+globalStore.enabled_n20 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n20) {
+globalStore.enabled_n20 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n28 = function() {
+if(globalStore.n7 > 0 && globalStore.dismissal==0) {
+if (!globalStore.enabled_n28) {
+globalStore.enabled_n28 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n28) {
+globalStore.enabled_n28 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n10 = function() {
+if(globalStore.n1 > 0) {
+if (!globalStore.enabled_n10) {
+globalStore.enabled_n10 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n10) {
+globalStore.enabled_n10 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n17 = function() {
+if(globalStore.n3 > 0) {
+if (!globalStore.enabled_n17) {
+globalStore.enabled_n17 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n17) {
+globalStore.enabled_n17 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n21 = function() {
+if(globalStore.n7 > 0 && globalStore.dismissal==1) {
+if (!globalStore.enabled_n21) {
+globalStore.enabled_n21 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n21) {
+globalStore.enabled_n21 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n23 = function() {
+if(globalStore.n2 > 0) {
+if (!globalStore.enabled_n23) {
+globalStore.enabled_n23 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n23) {
+globalStore.enabled_n23 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n25 = function() {
+if(globalStore.n2 > 0 && globalStore.totalPaymentAmount>=globalStore.amount+globalStore.expense) {
+if (!globalStore.enabled_n25) {
+globalStore.enabled_n25 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n25) {
+globalStore.enabled_n25 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n15 = function() {
+if(globalStore.n5 > 0 && globalStore.dismissal==1) {
+if (!globalStore.enabled_n15) {
+globalStore.enabled_n15 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n15) {
+globalStore.enabled_n15 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n13 = function() {
+if(globalStore.n3 > 0) {
+if (!globalStore.enabled_n13) {
+globalStore.enabled_n13 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n13) {
+globalStore.enabled_n13 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n11 = function() {
+if(globalStore.n9 > 0) {
+if (!globalStore.enabled_n11) {
+globalStore.enabled_n11 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n11) {
+globalStore.enabled_n11 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n14 = function() {
+if(globalStore.n3 > 0 && globalStore.totalPaymentAmount>=globalStore.amount+globalStore.expense) {
+if (!globalStore.enabled_n14) {
+globalStore.enabled_n14 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n14) {
+globalStore.enabled_n14 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n24 = function() {
+if(globalStore.n3 > 0) {
+if (!globalStore.enabled_n24) {
+globalStore.enabled_n24 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n24) {
+globalStore.enabled_n24 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n16 = function() {
+if(globalStore.n5 > 0 && globalStore.dismissal==2) {
+if (!globalStore.enabled_n16) {
+globalStore.enabled_n16 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n16) {
+globalStore.enabled_n16 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+var update_enabled_n19 = function() {
+if(globalStore.n9 > 0 && globalStore.dismissal!=1&&globalStore.points==0&&globalStore.totalPaymentAmount>=globalStore.amount) {
+if (!globalStore.enabled_n19) {
+globalStore.enabled_n19 = true;
+globalStore.countEnabled = globalStore.countEnabled + 1;
+}
+} else {
+if (globalStore.enabled_n19) {
+globalStore.enabled_n19 = false;
+globalStore.countEnabled = globalStore.countEnabled - 1;
+}
+}
+}
+
+
+var fire_n18 = function() {
+globalStore.n3 = globalStore.n3 - 1;
+globalStore.n4 = globalStore.n4 + 1;
+
+globalStore.fired_n18 = globalStore.fired_n18 + 1;
+
+
+
+update_enabled_n17();
+update_enabled_n27();
+update_enabled_n18();
+update_enabled_n24();
+update_enabled_n14();
+update_enabled_n13();
+}
+
+
+var fire_n22 = function() {
+globalStore.n8 = globalStore.n8 - 1;
+globalStore.n3 = globalStore.n3 + 1;
+
+globalStore.fired_n22 = globalStore.fired_n22 + 1;
+
+
+
+update_enabled_n17();
+update_enabled_n27();
+update_enabled_n18();
+update_enabled_n24();
+update_enabled_n22();
+update_enabled_n14();
+update_enabled_n13();
+}
+
+
+var fire_n26 = function() {
+globalStore.n9 = globalStore.n9 - 1;
+globalStore.n9 = globalStore.n9 + 1;
+
+globalStore.fired_n26 = globalStore.fired_n26 + 1;
+
+var old_var_totalPaymentAmount = globalStore.totalPaymentAmount;
+globalStore.totalPaymentAmount = uniform({a: globalStore.vars['totalPaymentAmount']['minValue'], b: globalStore.vars['totalPaymentAmount']['maxValue']});
+
+update_enabled_n11();
+update_enabled_n26();
+update_enabled_n19();
+}
+
+
+var fire_n27 = function() {
+globalStore.n3 = globalStore.n3 - 1;
+globalStore.n3 = globalStore.n3 + 1;
+
+globalStore.fired_n27 = globalStore.fired_n27 + 1;
+
+var old_var_totalPaymentAmount = globalStore.totalPaymentAmount;
+globalStore.totalPaymentAmount = uniform({a: globalStore.vars['totalPaymentAmount']['minValue'], b: globalStore.vars['totalPaymentAmount']['maxValue']});
+
+update_enabled_n17();
+update_enabled_n27();
+update_enabled_n18();
+update_enabled_n24();
+update_enabled_n14();
+update_enabled_n13();
+}
+
+
+var fire_n12 = function() {
+globalStore.n2 = globalStore.n2 - 1;
+globalStore.n3 = globalStore.n3 + 1;
+
+globalStore.fired_n12 = globalStore.fired_n12 + 1;
+
+
+
+update_enabled_n17();
+update_enabled_n27();
+update_enabled_n18();
+update_enabled_n25();
+update_enabled_n23();
+update_enabled_n24();
+update_enabled_n12();
+update_enabled_n14();
+update_enabled_n13();
+}
+
+
+var fire_n20 = function() {
+globalStore.n6 = globalStore.n6 - 1;
+globalStore.n7 = globalStore.n7 + 1;
+
+globalStore.fired_n20 = globalStore.fired_n20 + 1;
+
+var old_var_dismissal = globalStore.dismissal;
+globalStore.dismissal = randomInteger({n: globalStore.vars['dismissal']['maxValue']});
+
+update_enabled_n21();
+update_enabled_n20();
+update_enabled_n28();
+}
+
+
+var fire_n28 = function() {
+globalStore.n7 = globalStore.n7 - 1;
+globalStore.n4 = globalStore.n4 + 1;
+
+globalStore.fired_n28 = globalStore.fired_n28 + 1;
+
+
+
+update_enabled_n21();
+update_enabled_n28();
+}
+
+
+var fire_n10 = function() {
+globalStore.n1 = globalStore.n1 - 1;
+globalStore.n9 = globalStore.n9 + 1;
+
+globalStore.fired_n10 = globalStore.fired_n10 + 1;
+
+var old_var_amount = globalStore.amount;
+globalStore.amount = uniform({a: globalStore.vars['amount']['minValue'], b: globalStore.vars['amount']['maxValue']});
+var old_var_dismissal = globalStore.dismissal;
+globalStore.dismissal = randomInteger({n: globalStore.vars['dismissal']['maxValue']});
+var old_var_totalPaymentAmount = globalStore.totalPaymentAmount;
+globalStore.totalPaymentAmount = uniform({a: globalStore.vars['totalPaymentAmount']['minValue'], b: globalStore.vars['totalPaymentAmount']['maxValue']});
+var old_var_points = globalStore.points;
+globalStore.points = randomInteger({n: globalStore.vars['points']['maxValue']});
+
+update_enabled_n11();
+update_enabled_n19();
+update_enabled_n26();
+update_enabled_n10();
+}
+
+
+var fire_n17 = function() {
+globalStore.n3 = globalStore.n3 - 1;
+globalStore.n5 = globalStore.n5 + 1;
+
+globalStore.fired_n17 = globalStore.fired_n17 + 1;
+
+var old_var_dismissal = globalStore.dismissal;
+globalStore.dismissal = randomInteger({n: globalStore.vars['dismissal']['maxValue']});
+var old_var_delayJudge = globalStore.delayJudge;
+globalStore.delayJudge = randomInteger({n: globalStore.vars['delayJudge']['maxValue']});
+condition(globalStore.delayJudge<1440);
+
+update_enabled_n16();
+update_enabled_n17();
+update_enabled_n27();
+update_enabled_n18();
+update_enabled_n15();
+update_enabled_n24();
+update_enabled_n14();
+update_enabled_n13();
+}
+
+
+var fire_n21 = function() {
+globalStore.n7 = globalStore.n7 - 1;
+globalStore.n8 = globalStore.n8 + 1;
+
+globalStore.fired_n21 = globalStore.fired_n21 + 1;
+
+
+
+update_enabled_n21();
+update_enabled_n22();
+update_enabled_n28();
+}
+
+
+var fire_n23 = function() {
+globalStore.n2 = globalStore.n2 - 1;
+globalStore.n2 = globalStore.n2 + 1;
+
+globalStore.fired_n23 = globalStore.fired_n23 + 1;
+
+var old_var_totalPaymentAmount = globalStore.totalPaymentAmount;
+globalStore.totalPaymentAmount = uniform({a: globalStore.vars['totalPaymentAmount']['minValue'], b: globalStore.vars['totalPaymentAmount']['maxValue']});
+
+update_enabled_n12();
+update_enabled_n25();
+update_enabled_n23();
+}
+
+
+var fire_n25 = function() {
+globalStore.n2 = globalStore.n2 - 1;
+globalStore.n4 = globalStore.n4 + 1;
+
+globalStore.fired_n25 = globalStore.fired_n25 + 1;
+
+
+
+update_enabled_n12();
+update_enabled_n25();
+update_enabled_n23();
+}
+
+
+var fire_n15 = function() {
+globalStore.n5 = globalStore.n5 - 1;
+globalStore.n3 = globalStore.n3 + 1;
+
+globalStore.fired_n15 = globalStore.fired_n15 + 1;
+
+
+
+update_enabled_n16();
+update_enabled_n17();
+update_enabled_n27();
+update_enabled_n18();
+update_enabled_n15();
+update_enabled_n24();
+update_enabled_n14();
+update_enabled_n13();
+}
+
+
+var fire_n13 = function() {
+globalStore.n3 = globalStore.n3 - 1;
+globalStore.n6 = globalStore.n6 + 1;
+
+globalStore.fired_n13 = globalStore.fired_n13 + 1;
+
+var old_var_delayPrefecture = globalStore.delayPrefecture;
+globalStore.delayPrefecture = randomInteger({n: globalStore.vars['delayPrefecture']['maxValue']});
+condition(globalStore.delayPrefecture<1440);
+
+update_enabled_n17();
+update_enabled_n27();
+update_enabled_n20();
+update_enabled_n18();
+update_enabled_n24();
+update_enabled_n14();
+update_enabled_n13();
+}
+
+
+var fire_n11 = function() {
+globalStore.n9 = globalStore.n9 - 1;
+globalStore.n2 = globalStore.n2 + 1;
+
+globalStore.fired_n11 = globalStore.fired_n11 + 1;
+
+var old_var_delaySend = globalStore.delaySend;
+globalStore.delaySend = randomInteger({n: globalStore.vars['delaySend']['maxValue']});
+var old_var_expense = globalStore.expense;
+globalStore.expense = uniform({a: globalStore.vars['expense']['minValue'], b: globalStore.vars['expense']['maxValue']});
+condition(globalStore.delaySend<2160);
+
+update_enabled_n11();
+update_enabled_n26();
+update_enabled_n25();
+update_enabled_n23();
+update_enabled_n19();
+update_enabled_n12();
+}
+
+
+var fire_n14 = function() {
+globalStore.n3 = globalStore.n3 - 1;
+globalStore.n4 = globalStore.n4 + 1;
+
+globalStore.fired_n14 = globalStore.fired_n14 + 1;
+
+
+
+update_enabled_n17();
+update_enabled_n27();
+update_enabled_n18();
+update_enabled_n24();
+update_enabled_n14();
+update_enabled_n13();
+}
+
+
+var fire_n24 = function() {
+globalStore.n3 = globalStore.n3 - 1;
+globalStore.n3 = globalStore.n3 + 1;
+
+globalStore.fired_n24 = globalStore.fired_n24 + 1;
+
+var old_var_amount = globalStore.amount;
+globalStore.amount = uniform({a: globalStore.vars['amount']['minValue'], b: globalStore.vars['amount']['maxValue']});
+
+update_enabled_n17();
+update_enabled_n27();
+update_enabled_n18();
+update_enabled_n24();
+update_enabled_n14();
+update_enabled_n13();
+}
+
+
+var fire_n16 = function() {
+globalStore.n5 = globalStore.n5 - 1;
+globalStore.n4 = globalStore.n4 + 1;
+
+globalStore.fired_n16 = globalStore.fired_n16 + 1;
+
+
+
+update_enabled_n15();
+update_enabled_n16();
+}
+
+
+var fire_n19 = function() {
+globalStore.n9 = globalStore.n9 - 1;
+globalStore.n4 = globalStore.n4 + 1;
+
+globalStore.fired_n19 = globalStore.fired_n19 + 1;
+
+
+
+update_enabled_n11();
+update_enabled_n26();
+update_enabled_n19();
+}
+
+
+var getXMLtag = function (type) {
+if (type.includes("Double")) {
+return "float";
+} else if (type.includes("Integer")) {
+return "integer";
+} else if (type.includes("Boolean")) {
+return "boolean";
+}
+return "string";
+}
+
+var log_transition = function(transition) {
+if (transition !== "None") {
+var delaySendTag = getXMLtag(globalStore.vars.delaySend.type);
+var amountTag = getXMLtag(globalStore.vars.amount.type);
+var dismissalTag = getXMLtag(globalStore.vars.dismissal.type);
+var totalPaymentAmountTag = getXMLtag(globalStore.vars.totalPaymentAmount.type);
+var delayJudgeTag = getXMLtag(globalStore.vars.delayJudge.type);
+var expenseTag = getXMLtag(globalStore.vars.expense.type);
+var pointsTag = getXMLtag(globalStore.vars.points.type);
+var delayPrefectureTag = getXMLtag(globalStore.vars.delayPrefecture.type);
+globalStore.xesOutput += "<event>\n";
+globalStore.xesOutput +=  "<string key=\"concept:name\" value=\"" + transition + "\"/>\n";
+if (globalStore.delaySend !== undefined &&  globalStore.delaySend !== null) {
+if (globalStore.vars.delaySend.valueMapping) {
+var delaySendValue = globalStore.vars.delaySend.valueMapping[globalStore.delaySend] || globalStore.delaySend;
+globalStore.xesOutput +=  "<" + delaySendTag +   " key=\"delaySend\" value=\"" + delaySendValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + delaySendTag +   " key=\"delaySend\" value=\"" + globalStore.delaySend + "\"/>\n";
+}
+}
+if (globalStore.amount !== undefined &&  globalStore.amount !== null) {
+if (globalStore.vars.amount.valueMapping) {
+var amountValue = globalStore.vars.amount.valueMapping[globalStore.amount] || globalStore.amount;
+globalStore.xesOutput +=  "<" + amountTag +   " key=\"amount\" value=\"" + amountValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + amountTag +   " key=\"amount\" value=\"" + globalStore.amount + "\"/>\n";
+}
+}
+if (globalStore.dismissal !== undefined &&  globalStore.dismissal !== null) {
+if (globalStore.vars.dismissal.valueMapping) {
+var dismissalValue = globalStore.vars.dismissal.valueMapping[globalStore.dismissal] || globalStore.dismissal;
+globalStore.xesOutput +=  "<" + dismissalTag +   " key=\"dismissal\" value=\"" + dismissalValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + dismissalTag +   " key=\"dismissal\" value=\"" + globalStore.dismissal + "\"/>\n";
+}
+}
+if (globalStore.totalPaymentAmount !== undefined &&  globalStore.totalPaymentAmount !== null) {
+if (globalStore.vars.totalPaymentAmount.valueMapping) {
+var totalPaymentAmountValue = globalStore.vars.totalPaymentAmount.valueMapping[globalStore.totalPaymentAmount] || globalStore.totalPaymentAmount;
+globalStore.xesOutput +=  "<" + totalPaymentAmountTag +   " key=\"totalPaymentAmount\" value=\"" + totalPaymentAmountValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + totalPaymentAmountTag +   " key=\"totalPaymentAmount\" value=\"" + globalStore.totalPaymentAmount + "\"/>\n";
+}
+}
+if (globalStore.delayJudge !== undefined &&  globalStore.delayJudge !== null) {
+if (globalStore.vars.delayJudge.valueMapping) {
+var delayJudgeValue = globalStore.vars.delayJudge.valueMapping[globalStore.delayJudge] || globalStore.delayJudge;
+globalStore.xesOutput +=  "<" + delayJudgeTag +   " key=\"delayJudge\" value=\"" + delayJudgeValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + delayJudgeTag +   " key=\"delayJudge\" value=\"" + globalStore.delayJudge + "\"/>\n";
+}
+}
+if (globalStore.expense !== undefined &&  globalStore.expense !== null) {
+if (globalStore.vars.expense.valueMapping) {
+var expenseValue = globalStore.vars.expense.valueMapping[globalStore.expense] || globalStore.expense;
+globalStore.xesOutput +=  "<" + expenseTag +   " key=\"expense\" value=\"" + expenseValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + expenseTag +   " key=\"expense\" value=\"" + globalStore.expense + "\"/>\n";
+}
+}
+if (globalStore.points !== undefined &&  globalStore.points !== null) {
+if (globalStore.vars.points.valueMapping) {
+var pointsValue = globalStore.vars.points.valueMapping[globalStore.points] || globalStore.points;
+globalStore.xesOutput +=  "<" + pointsTag +   " key=\"points\" value=\"" + pointsValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + pointsTag +   " key=\"points\" value=\"" + globalStore.points + "\"/>\n";
+}
+}
+if (globalStore.delayPrefecture !== undefined &&  globalStore.delayPrefecture !== null) {
+if (globalStore.vars.delayPrefecture.valueMapping) {
+var delayPrefectureValue = globalStore.vars.delayPrefecture.valueMapping[globalStore.delayPrefecture] || globalStore.delayPrefecture;
+globalStore.xesOutput +=  "<" + delayPrefectureTag +   " key=\"delayPrefecture\" value=\"" + delayPrefectureValue + "\"/>\n";
+}
+else {
+globalStore.xesOutput +=  "<" + delayPrefectureTag +   " key=\"delayPrefecture\" value=\"" + globalStore.delayPrefecture + "\"/>\n";
+}
+}
+globalStore.xesOutput +=  "</event>\n";
+globalStore.trace += globalStore.xesOutput;
+}
+};
+
+var simulator_loop = function(steps) {
+
+globalStore.xesOutput = "";
+
+var enabledTransitions = filter(function(x) {
+return (x == 0 && globalStore.enabled_n18)||
+(x == 1 && globalStore.enabled_n22)||
+(x == 2 && globalStore.enabled_n26)||
+(x == 3 && globalStore.enabled_n27)||
+(x == 4 && globalStore.enabled_n12)||
+(x == 5 && globalStore.enabled_n20)||
+(x == 6 && globalStore.enabled_n28)||
+(x == 7 && globalStore.enabled_n10)||
+(x == 8 && globalStore.enabled_n17)||
+(x == 9 && globalStore.enabled_n21)||
+(x == 10 && globalStore.enabled_n23)||
+(x == 11 && globalStore.enabled_n25)||
+(x == 12 && globalStore.enabled_n15)||
+(x == 13 && globalStore.enabled_n13)||
+(x == 14 && globalStore.enabled_n11)||
+(x == 15 && globalStore.enabled_n14)||
+(x == 16 && globalStore.enabled_n24)||
+(x == 17 && globalStore.enabled_n16)||
+(x == 18 && globalStore.enabled_n19);
+}, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]);
+
+if (steps <= 0) {
+return;
+}
+
+if (enabledTransitions.length == 0) {
+return;
+}
+
+if (globalStore.n4 > 0) {
+return;
+}
+
+var transition = sample(Categorical({vs: enabledTransitions}));
+
+if (transition == 0) {
+log_transition("Send for Credit Collection");
+fire_n18();
+}
+else if (transition == 1) {
+log_transition("Notify Result Appeal to Offender");
+fire_n22();
+}
+else if (transition == 2) {
+log_transition("Payment");
+fire_n26();
+}
+else if (transition == 3) {
+log_transition("Payment");
+fire_n27();
+}
+else if (transition == 4) {
+log_transition("Insert Fine Notification");
+fire_n12();
+}
+else if (transition == 5) {
+log_transition("Send Appeal to Prefecture");
+fire_n20();
+}
+else if (transition == 6) {
+log_transition("None");
+fire_n28();
+}
+else if (transition == 7) {
+log_transition("Create Fine");
+fire_n10();
+}
+else if (transition == 8) {
+log_transition("Appeal to Judge");
+fire_n17();
+}
+else if (transition == 9) {
+log_transition("Receive Result Appeal from Prefecture");
+fire_n21();
+}
+else if (transition == 10) {
+log_transition("Payment");
+fire_n23();
+}
+else if (transition == 11) {
+log_transition("None");
+fire_n25();
+}
+else if (transition == 12) {
+log_transition("None");
+fire_n15();
+}
+else if (transition == 13) {
+log_transition("Insert Date Appeal to Prefecture");
+fire_n13();
+}
+else if (transition == 14) {
+log_transition("Send Fine");
+fire_n11();
+}
+else if (transition == 15) {
+log_transition("None");
+fire_n14();
+}
+else if (transition == 16) {
+log_transition("Add penalty");
+fire_n24();
+}
+else if (transition == 17) {
+log_transition("None");
+fire_n16();
+}
+else if (transition == 18) {
+log_transition("None");
+fire_n19();
+}
+else {
+console.log("Selected illegal transition; should never happen.");
+}
+simulator_loop(steps - 1);
+}
+
+var simulator = function(){
+init();
+update_enabled_n18();
+update_enabled_n22();
+update_enabled_n26();
+update_enabled_n27();
+update_enabled_n12();
+update_enabled_n20();
+update_enabled_n28();
+update_enabled_n10();
+update_enabled_n17();
+update_enabled_n21();
+update_enabled_n23();
+update_enabled_n25();
+update_enabled_n15();
+update_enabled_n13();
+update_enabled_n11();
+update_enabled_n14();
+update_enabled_n24();
+update_enabled_n16();
+update_enabled_n19();
+
+globalStore.trace += "<trace>\n";
+
+simulator_loop(50);
+
+globalStore.trace += "</trace>\n";
+
+console.log(globalStore.trace);
+
+return;
+}
+
+var dist = Infer({
+method: 'MCMC', 
+samples: 5000,
+},simulator);
+
