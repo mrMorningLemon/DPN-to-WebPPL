@@ -106,7 +106,7 @@ with open('xes_files/simple_auction.xes', 'w') as f:
     f.write(synthetic_log)
 
 ```
-When the PNML file is complex and thus the resulting WebPPL file is complex, the generation of the XES-File can take a while and a initialization warning can appear. This can also happen if a huge sample size or simulator step size is chosen. Also, it is important to note that in this implementation only traces can be generated, that also reach the final marking. The generated XES file can be opened with e.g. ProM to visualize the event log.
+When the PNML file is complex and thus the resulting WebPPL file is complex, the generation of the XES-File can take a while and a initialization warning can appear. This can also happen if a huge sample size or simulator step size is chosen. Also, it is important to note that in this implementation only traces can be generated, that also reach the final marking. The tool will by default output two values: one boolean (`true`, if the WebPPL query has been answered; `false`, otherwise) and one real (probability of answering that query). The generated XES file can be opened with e.g. ProM to visualize the event log.
 
 
 
