@@ -111,4 +111,11 @@ When the PNML file is complex and thus the resulting WebPPL file is complex, the
 
 
 ## Contributing
-Due to the double-blind review process, we are unable to list specific contributing guidelines, authors, or the project's status. 
+* **Martin Kuhn**, German Research Center for Artificial Intelligence (DFKI), SDS Branch Trier, Trier, Germany
+* **Joscha Grüger**, University of Trier & German Research Center for Artificial Intelligence (DFKI), SDS Branch Trier, Trier, Germany
+* **Christoph Matheja**, Technical University of Denmark, Kgs. Lyngby, Denmark
+* **Andrey Rivkin**, Technical University of Denmark, Kgs. Lyngby, Denmark
+
+
+## Related Works
+* 	*Martin Kuhn, Joscha Grüger, Christoph Matheja, Andrey Rivkin*: Data Petri Nets meet Probabilistic Programming (Extended version). CoRR abs/2406.11883 (2024)
